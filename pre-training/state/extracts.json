@@ -1,0 +1,242 @@
+{
+  "batches": [
+    {
+      "batch_id": "batch-000",
+      "samples": [
+        "am2011a",
+        "ar2010a",
+        "at2011a",
+        "bd2011a",
+        "bf2006a",
+        "bj2013a",
+        "bo2012a",
+        "br2010a",
+        "bw2011a",
+        "by2009a"
+      ],
+      "extract_id": 1,
+      "status": "downloaded",
+      "submitted_at": "2026-05-22T19:22:08+00:00",
+      "downloaded_at": "2026-05-22T19:29:39+00:00",
+      "prepared_at": "2026-05-26T13:33:53+00:00",
+      "prepared_iso3": ["ARG", "ARM", "AUT", "BEN", "BFA", "BGD", "BLR", "BOL", "BRA", "BWA"]
+    },
+    {
+      "batch_id": "batch-001",
+      "samples": [
+        "ca2011a",
+        "ch2011a",
+        "ci1998a",
+        "cl2017a",
+        "cm2005a",
+        "cn2000a",
+        "co2005a",
+        "cr2011a",
+        "cu2012a",
+        "de1987a"
+      ],
+      "extract_id": 2,
+      "status": "downloaded",
+      "submitted_at": "2026-05-22T19:29:41+00:00",
+      "downloaded_at": "2026-05-22T19:34:14+00:00",
+      "prepared_at": "2026-05-26T13:33:53+00:00",
+      "prepared_iso3": ["CAN", "CHE", "CHL", "CHN", "CIV", "CMR", "COL", "CRI", "CUB", "DEU"]
+    },
+    {
+      "batch_id": "batch-002",
+      "samples": [
+        "dk1885a",
+        "do2010a",
+        "ec2010a",
+        "eg2006a",
+        "es2020k",
+        "et2007a",
+        "fi2010a",
+        "fj2014a",
+        "fr2011a",
+        "gh2010a"
+      ],
+      "extract_id": 3,
+      "status": "downloaded",
+      "submitted_at": "2026-05-22T19:34:16+00:00",
+      "downloaded_at": "2026-05-26T09:41:35+00:00",
+      "prepared_at": "2026-05-26T13:38:22+00:00",
+      "prepared_iso3": ["DNK", "DOM", "ECU", "EGY", "ESP", "ETH", "FIN", "FJI", "FRA", "GHA"]
+    },
+    {
+      "batch_id": "batch-003",
+      "samples": [
+        "gn2014a",
+        "gr2011a",
+        "gt2002a",
+        "hn2013a",
+        "ht2003a",
+        "hu2011a",
+        "id2010a",
+        "ie2016a",
+        "il2008a",
+        "in2009a"
+      ],
+      "extract_id": 4,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T09:41:36+00:00",
+      "downloaded_at": "2026-05-26T09:56:09+00:00",
+      "prepared_at": "2026-05-26T13:41:44+00:00",
+      "prepared_iso3": ["GIN", "GRC", "GTM", "HND", "HTI", "HUN", "IDN", "IND", "IRL", "ISR"]
+    },
+    {
+      "batch_id": "batch-004",
+      "samples": [
+        "iq1997a",
+        "ir2011a",
+        "is1910a",
+        "it2020h",
+        "jm2001a",
+        "jo2004a",
+        "ke2019a",
+        "kg2009a",
+        "kh2019a",
+        "la2015a"
+      ],
+      "extract_id": 5,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T09:57:52+00:00",
+      "downloaded_at": "2026-05-26T10:04:23+00:00",
+      "prepared_at": "2026-05-26T13:43:08+00:00",
+      "prepared_iso3": ["IRN", "IRQ", "ISL", "ITA", "JAM", "JOR", "KEN", "KGZ", "KHM", "LAO"]
+    },
+    {
+      "batch_id": "batch-005",
+      "samples": [
+        "lc1991a",
+        "lr2008a",
+        "ls2006a",
+        "ma2014a",
+        "ml2009a",
+        "mm2014a",
+        "mn2020a",
+        "mu2011a",
+        "mw2018a",
+        "mx2020j"
+      ],
+      "extract_id": 6,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T10:04:24+00:00",
+      "downloaded_at": "2026-05-26T10:09:17+00:00",
+      "prepared_at": "2026-05-26T13:44:30+00:00",
+      "prepared_iso3": ["LBR", "LCA", "LSO", "MAR", "MEX", "MLI", "MMR", "MNG", "MUS", "MWI"]
+    },
+    {
+      "batch_id": "batch-006",
+      "samples": [
+        "my2000a",
+        "mz2017a",
+        "ng2010a",
+        "ni2005a",
+        "nl2011a",
+        "no1910a",
+        "np2011a",
+        "pa2010a",
+        "pe2017a",
+        "pg2000a"
+      ],
+      "extract_id": 7,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T10:09:18+00:00",
+      "downloaded_at": "2026-05-26T10:14:35+00:00",
+      "prepared_at": "2026-05-26T13:46:00+00:00",
+      "prepared_iso3": ["MOZ", "MYS", "NGA", "NIC", "NLD", "NOR", "NPL", "PAN", "PER", "PNG"]
+    },
+    {
+      "batch_id": "batch-007",
+      "samples": [
+        "ph2019j",
+        "pk1998a",
+        "pl2011a",
+        "pr2020a",
+        "ps2017a",
+        "pt2011a",
+        "py2002a",
+        "ro2011a",
+        "ru2010a",
+        "rw2012a"
+      ],
+      "extract_id": 8,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T10:14:36+00:00",
+      "downloaded_at": "2026-05-26T12:12:19+00:00",
+      "prepared_at": "2026-05-26T13:49:11+00:00",
+      "prepared_iso3": ["PAK", "PHL", "POL", "PRI", "PRT", "PRY", "PSE", "ROU", "RUS", "RWA"]
+    },
+    {
+      "batch_id": "batch-008",
+      "samples": [
+        "sd2008a",
+        "se1910a",
+        "si2002a",
+        "sk2011a",
+        "sl2015a",
+        "sn2013a",
+        "sr2012a",
+        "ss2008a",
+        "sv2007a",
+        "tg2010a"
+      ],
+      "extract_id": 9,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T12:12:20+00:00",
+      "downloaded_at": "2026-05-26T12:19:47+00:00",
+      "prepared_at": "2026-05-26T13:58:52+00:00",
+      "prepared_iso3": ["SDN", "SEN", "SLE", "SLV", "SSD", "SUR", "SVK", "SVN", "SWE", "TGO"]
+    },
+    {
+      "batch_id": "batch-009",
+      "samples": [
+        "th2000a",
+        "tr2000a",
+        "tt2011a",
+        "tz2012a",
+        "ua2001a",
+        "ug2014a",
+        "uk2001a",
+        "us2020a",
+        "uy2011a",
+        "ve2001a"
+      ],
+      "extract_id": 10,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T12:19:48+00:00",
+      "downloaded_at": "2026-05-26T12:39:21+00:00",
+      "prepared_at": "2026-05-26T14:02:55+00:00",
+      "prepared_iso3": ["GBR", "THA", "TTO", "TZA", "UGA", "UKR", "URY", "USA", "VEN"]
+    },
+    {
+      "batch_id": "batch-010",
+      "samples": ["vn2019a", "za2016a", "zm2010a", "zw2012a"],
+      "extract_id": 11,
+      "status": "downloaded",
+      "submitted_at": "2026-05-26T12:39:22+00:00",
+      "downloaded_at": "2026-05-26T12:52:30+00:00",
+      "prepared_at": "2026-05-26T14:04:22+00:00",
+      "prepared_iso3": ["VNM", "ZAF", "ZMB", "ZWE"]
+    }
+  ],
+  "variables": [
+    "COUNTRY",
+    "AGE",
+    "SEX",
+    "MARST",
+    "RELIGION",
+    "RACE",
+    "EDATTAIN",
+    "EMPSTAT",
+    "GEOLEV1",
+    "GEOLEV2",
+    "URBAN",
+    "CHBORN",
+    "PERWT",
+    "SERIAL",
+    "PERNUM"
+  ],
+  "created_at": "2026-05-22T19:18:28+00:00"
+}

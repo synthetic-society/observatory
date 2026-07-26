@@ -1,0 +1,156 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+}
+const { title = "Observatory of Anonymity" } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: "/quiz", label: "The test" },
+  { href: "/research", label: "The research" },
+  { href: "/about", label: "About us" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" href="/fonts/MDSystem-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/JunicodeVF-Roman.woff2" as="font" type="font/woff2" crossorigin />
+    <title>{title}</title>
+  </head>
+  <body class="bg-bg font-sans text-ink antialiased">
+    <header class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <a href="/" class="flex items-center gap-2.5">
+        <span
+          id="eye"
+          class="group relative grid h-5 w-5 place-items-center overflow-hidden rounded-full border border-ink"
+        >
+          <span id="eye-pupil" style="transition: transform 80ms linear; will-change: transform">
+            <span class="block h-2 w-2 rounded-full bg-ink transition-transform duration-200 group-hover:scale-150"
+            ></span>
+          </span>
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 bg-bg"
+            style="animation: eye-blink 9s ease-in-out infinite; will-change: transform"></span>
+        </span>
+        <span class="font-semibold">Observatory of Anonymity</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7">
+        {
+          nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={path === item.href ? "page" : undefined}
+              class:list={[
+                "transition",
+                path === item.href
+                  ? "underline underline-offset-4"
+                  : "text-ink hover:underline underline-offset-4",
+              ]}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+      <button
+        id="nav-toggle"
+        type="button"
+        class="md:hidden flex h-9 w-9 items-center justify-center text-ink cursor-pointer"
+        aria-label="Open navigation"
+        aria-controls="mobile-nav"
+        aria-expanded="false"
+      >
+        <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+        <svg id="nav-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18" /><line x1="6" y1="18" x2="18" y2="6" /></svg>
+      </button>
+    </header>
+    <div class="border-t border-ink/15"></div>
+    <nav id="mobile-nav" class="hidden md:hidden border-b border-ink/15">
+      <ul class="mx-auto flex max-w-7xl flex-col">
+        {
+          nav.map((item) => (
+            <li class="border-ink/10 border-t first:border-t-0">
+              <a
+                href={item.href}
+                aria-current={path === item.href ? "page" : undefined}
+                class:list={[
+                  "block px-6 py-4 transition",
+                  path === item.href
+                    ? "underline underline-offset-4"
+                    : "text-ink hover:bg-ink/5",
+                ]}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <script>
+      // The pupil follows the pointer, more the closer it gets.
+      const PUPIL_MAX_OFFSET = 2.5;
+      const PUPIL_TRACKING_RADIUS = 120;
+      const eye = document.getElementById("eye");
+      const pupil = document.getElementById("eye-pupil");
+      if (eye && pupil) {
+        window.addEventListener("pointermove", (event) => {
+          const box = eye.getBoundingClientRect();
+          const dx = event.clientX - (box.left + box.width / 2);
+          const dy = event.clientY - (box.top + box.height / 2);
+          const distance = Math.hypot(dx, dy) || 1;
+          const offset = Math.min(1, distance / PUPIL_TRACKING_RADIUS) * PUPIL_MAX_OFFSET;
+          pupil.style.transform = `translate(${(dx / distance) * offset}px, ${(dy / distance) * offset}px)`;
+        });
+      }
+
+      const btn = document.getElementById("nav-toggle");
+      const menu = document.getElementById("mobile-nav");
+      const iconOpen = document.getElementById("nav-icon-open");
+      const iconClose = document.getElementById("nav-icon-close");
+      btn?.addEventListener("click", () => {
+        const open = menu?.classList.toggle("hidden") === false;
+        btn.setAttribute("aria-expanded", String(open));
+        btn.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+        iconOpen?.classList.toggle("hidden", open);
+        iconClose?.classList.toggle("hidden", !open);
+      });
+    </script>
+    <main><slot /></main>
+    <footer class="mt-24 border-t border-ink/15">
+      <div class="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
+        <div>
+          <p class="text-xl text-ink">The Observatory of Anonymity</p>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-ink">
+            We are committed to protecting the privacy of visitors to our
+            website. The Observatory of Anonymity neither collects nor shares
+            any personal data. All statistical computations run entirely in the
+            browser, and no personal data is transmitted to our servers. We
+            do not use analytics or tracking scripts.
+          </p>
+          <p class="mt-4 max-w-xl text-sm leading-relaxed text-ink">
+            The source code of the Observatory is available at
+            <a class="underline" href="https://github.com/computationalprivacy/observatory">github.com/computationalprivacy/observatory</a>
+            and distributed under a free license.
+          </p>
+        </div>
+        <div>
+          <p class="text-xl text-ink">Contacting us</p>
+          <p class="mt-4 max-w-md text-sm leading-relaxed text-ink/75">
+            Have questions, comments, or concerns? Please contact Luc Rocher by
+            email at: <span role="img" class="whitespace-nowrap select-none" aria-label="luc dot rocher at oii dot ox dot ac dot uk">x@y</span>
+            where <span class="select-none">x=luc.rocher</span> and
+            <span class="select-none">y=oii.ox.ac.uk</span>.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

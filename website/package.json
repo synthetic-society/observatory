@@ -1,0 +1,39 @@
+{
+  "name": "@observatory/website",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "biome check . && astro check",
+    "format": "biome check --write .",
+    "test": "bun test",
+    "deploy": "astro build && wrangler deploy --env production",
+    "deploy:staging": "astro build && wrangler deploy --env staging"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "7.0.3",
+    "@astrojs/preact": "6.0.1",
+    "@preact/signals": "^2.10.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "7.1.3",
+    "comlink": "^4.4.2",
+    "preact": "^10.29.7",
+    "tailwindcss": "^4.3.3",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@biomejs/biome": "^2.5.5",
+    "@types/bun": "^1.3.14",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.114.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "bun@1.3.14"
+}

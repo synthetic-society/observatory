@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:18:32+00:00",
+  "iso3": "TTO",
+  "name": "Trinidad and Tobago",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 10,
+    "ipums_samples": [
+      "Thailand 2000",
+      "Turkey 2000",
+      "Trinidad and Tobago 2011",
+      "Tanzania 2012",
+      "Ukraine 2001",
+      "Uganda 2014",
+      "United Kingdom 2001",
+      "United States 2020",
+      "Uruguay 2011",
+      "Venezuela 2001"
+    ],
+    "ipums_country_code": 780,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 16496
+  },
+  "avail_var": ["Home location", "Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+  "marginals": {
+    "Home location": {
+      "probs": [0.8753637245392822, 0.061287584869059164, 0.03425072744907857, 0.029097963142580018],
+      "uniqVals": [
+        "Port of Spain",
+        "San Fernando",
+        "Claro/Mayaro, Siparia, Penal/Debe, Princess Town, Port Fontin, Caroni, St. Andrew/St. David, Victoria, St. Patrick, Arima",
+        "St. Paul, St. Mary, St. David, St. George, St. Patrick, St. Andrew, St. John, Tobago"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.03819107662463628, 0.03685741998060136, 0.03625121241513094, 0.03612997090203686, 0.03588748787584869,
+        0.03491755577109602, 0.03309893307468477, 0.03237148399612027, 0.030310378273520854, 0.029582929194956354,
+        0.029279825412221145, 0.029037342386032977, 0.028673617846750727, 0.028491755577109604, 0.02843113482056256,
+        0.02770368574199806, 0.027521823472356936, 0.027279340446168768, 0.027218719689621727, 0.027158098933074686,
+        0.026733753637245394, 0.02624878758486906, 0.025157613967022308, 0.025036372453928226, 0.02461202715809893,
+        0.024066440349175558, 0.024066440349175558, 0.023702715809893308, 0.023581474296799226, 0.022854025218234722,
+        0.021096023278370513, 0.01982298739088264, 0.019701745877788553, 0.01915615906886518, 0.018549951503394762,
+        0.015215809893307468, 0.010063045586808924, 0.004849660523763337, 0.0006668283220174588, 0.00042434529582929196
+      ],
+      "uniqVals": [
+        15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+        43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54
+      ]
+    },
+    "Marital status": {
+      "probs": [0.526188166828322, 0.392458777885548, 0.06328806983511154, 0.01806498545101843],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.32723084384093115, 0.2318137730358875, 0.2193258971871969, 0.11178467507274491, 0.05692289039767216,
+        0.026188166828322017, 0.01315470417070805, 0.007032007759456838, 0.0034553831231813772, 0.001879243452958293,
+        0.0007274490785645005, 0.00048496605237633366
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    },
+    "Religion": {
+      "probs": [
+        0.7557589718719689, 0.16246362754607177, 0.04352570320077594, 0.02164161008729389, 0.016488845780795344,
+        0.00012124151309408342
+      ],
+      "uniqVals": ["No religion", "Buddhist", "Hindu", "Muslim", "Christian", "Other"]
+    },
+    "Education": {
+      "probs": [0.7289039767216294, 0.1534917555771096, 0.07104752667313288, 0.04655674102812803],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.9259820562560621, 0.07401794374393793],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 1535000,
+  "corr": [
+    [
+      0.9999999999999998, 2.0584041147983806e-16, 0.11988229204625078, 0.06267935315192275, 0.3466679883581635,
+      0.0934681346721771, 4.795624299593645e-16
+    ],
+    [
+      2.0584041147983806e-16, 1.0, 0.5199547239774631, 0.5577001361869867, 3.0983878322143287e-16, 0.28268047052800915,
+      0.3434144215182461
+    ],
+    [
+      0.11988229204625078, 0.5199547239774631, 1.0000000000000007, 0.4998093635360997, 0.25243949890136763,
+      0.12285518322625436, 0.25825456436374183
+    ],
+    [
+      0.06267935315192275, 0.5577001361869867, 0.4998093635360997, 1.0000000000000004, 0.14449993413285872,
+      0.360245257383555, 0.1580553797427608
+    ],
+    [
+      0.3466679883581635, 3.0983878322143287e-16, 0.25243949890136763, 0.14449993413285872, 1.0000000000000007,
+      0.10705434036168668, 6.013182336575964e-11
+    ],
+    [
+      0.0934681346721771, 0.28268047052800915, 0.12285518322625436, 0.360245257383555, 0.10705434036168668,
+      1.0000000000000016, 0.12485070613519413
+    ],
+    [
+      4.795624299593645e-16, 0.3434144215182461, 0.25825456436374183, 0.1580553797427608, 6.013182336575964e-11,
+      0.12485070613519413, 0.999999999999999
+    ]
+  ]
+}

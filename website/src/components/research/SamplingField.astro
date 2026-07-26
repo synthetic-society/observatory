@@ -1,0 +1,114 @@
+---
+import { type Point, poissonDisk } from "../../lib/poisson";
+import { mulberry32 } from "../../model/stats";
+
+const VIEW = { w: 1400, h: 540 };
+const FIELD = { x0: 10, y0: 50, x1: 1390, y1: 450 };
+const SAMPLE = { x0: 10, y0: 50, x1: 280, y1: 230 };
+const MIN_GAP = 50;
+const SEED = 11;
+const CIRCLED_INSIDE = 1;
+const CIRCLED_OUTSIDE = 7;
+const INK = "#15205c";
+const ACCENT = "#d83a86";
+
+const random = mulberry32(SEED);
+const customers = poissonDisk({
+  bounds: { xMin: FIELD.x0, xMax: FIELD.x1, yMin: FIELD.y0, yMax: FIELD.y1 },
+  minDistance: MIN_GAP,
+  random,
+});
+
+const inSample = (p: Point) =>
+  p.x >= SAMPLE.x0 && p.x <= SAMPLE.x1 && p.y >= SAMPLE.y0 && p.y <= SAMPLE.y1;
+
+const inside: number[] = [];
+const outside: number[] = [];
+customers.forEach((p, i) => {
+  (inSample(p) ? inside : outside).push(i);
+});
+
+// Shuffle with the seeded generator so the picture is the same on every build.
+const pickSome = (indexes: number[], count: number) => {
+  const shuffled = [...indexes];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return new Set(shuffled.slice(0, Math.min(count, shuffled.length)));
+};
+
+const circled = new Set<number>([
+  ...pickSome(inside, CIRCLED_INSIDE),
+  ...pickSome(outside, CIRCLED_OUTSIDE),
+]);
+
+const dots = customers.map((p, i) => ({ ...p, circled: circled.has(i) }));
+---
+
+<svg
+  viewBox={`0 0 ${VIEW.w} ${VIEW.h}`}
+  class="mt-6 w-full h-auto"
+  role="img"
+  aria-label="A scatter of individual dots: a small region on the left is marked as the released sample, while highlighted dots sharing your demographics appear both inside and outside it."
+>
+  <rect
+    x={SAMPLE.x0}
+    y={SAMPLE.y0}
+    width={SAMPLE.x1 - SAMPLE.x0}
+    height={SAMPLE.y1 - SAMPLE.y0}
+    fill={ACCENT}
+    fill-opacity="0.08"
+    stroke={ACCENT}
+    stroke-opacity="0.6"
+    stroke-width="1.5"
+    rx="2"
+  />
+  <path
+    d={`M ${SAMPLE.x0} 30 L ${SAMPLE.x0} 42 M ${SAMPLE.x0} 30 L ${SAMPLE.x1} 30 M ${SAMPLE.x1} 30 L ${SAMPLE.x1} 42`}
+    stroke={INK}
+    stroke-width="1.2"
+    fill="none"
+  />
+  <text
+    x={(SAMPLE.x0 + SAMPLE.x1) / 2}
+    y="18"
+    text-anchor="middle"
+    fill={INK}
+    font-family="MD System, sans-serif"
+    font-size="22"
+  >
+    Small sample
+  </text>
+  <path
+    d={`M ${FIELD.x0} 470 L ${FIELD.x0} 462 M ${FIELD.x0} 470 L ${FIELD.x1} 470 M ${FIELD.x1} 470 L ${FIELD.x1} 462`}
+    stroke={INK}
+    stroke-width="1.2"
+    fill="none"
+  />
+  <text
+    x={(FIELD.x0 + FIELD.x1) / 2}
+    y="510"
+    text-anchor="middle"
+    fill={INK}
+    font-family="MD System, sans-serif"
+    font-size="22"
+  >
+    All customers
+  </text>
+  {dots.map((dot) => (
+    <Fragment>
+      <circle cx={dot.x} cy={dot.y} r="5" fill={INK} />
+      {dot.circled && (
+        <circle
+          cx={dot.x}
+          cy={dot.y}
+          r="11"
+          fill="none"
+          stroke={INK}
+          stroke-width="2"
+        />
+      )}
+    </Fragment>
+  ))}
+</svg>

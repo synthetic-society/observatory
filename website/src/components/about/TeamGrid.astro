@@ -1,0 +1,54 @@
+---
+const team = [
+  {
+    name: "Luc Rocher",
+    role: "Associate Professor",
+    affiliation: "University of Oxford",
+    img: "/team/luc-rocher.png",
+    href: "https://rocher.lc/",
+  },
+  {
+    name: "Julien Hendrickx",
+    role: "Professor",
+    affiliation: "UCLouvain",
+    img: "/team/julien-hendrickx.jpg",
+    href: "https://perso.uclouvain.be/julien.hendrickx/",
+  },
+  {
+    name: "Yves-Alexandre de Montjoye",
+    role: "Associate Professor",
+    affiliation: "Imperial College London",
+    img: "/team/y-a-demontjoye.png",
+    href: "https://demontjoye.com/",
+  },
+  {
+    name: "Meenatchi Sundaram MSA",
+    role: "Researcher",
+    affiliation: "Imperial, now UCL",
+    img: "/team/meenatchi-sundaram-msa.jpg",
+    href: "mailto:mrmmsmsa.2k12@gmail.com",
+  },
+];
+---
+
+<ul class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+  {team.map((person) => (
+    <li>
+      <a
+        href={person.href}
+        target="_blank"
+        rel="noopener"
+        class="block transition hover:opacity-90"
+      >
+        <img
+          src={person.img}
+          alt={person.name}
+          class="aspect-square w-full rounded-md object-cover grayscale"
+        />
+        <p class="mt-4 font-serif text-ink text-xl">{person.name}</p>
+        <p class="text-ink/75">{person.role}</p>
+        <p class="text-ink/70">{person.affiliation}</p>
+      </a>
+    </li>
+  ))}
+</ul>

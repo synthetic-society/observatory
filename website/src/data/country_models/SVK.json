@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-27T07:32:35+00:00",
+  "iso3": "SVK",
+  "name": "Slovakia",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 9,
+    "ipums_samples": [
+      "Sudan 2008",
+      "Sweden 1910 (100%)",
+      "Slovenia 2002",
+      "Slovakia 2011",
+      "Sierra Leone 2015",
+      "Senegal 2013",
+      "Suriname 2012",
+      "South Sudan 2008",
+      "El Salvador 2007",
+      "Togo 2010"
+    ],
+    "ipums_country_code": 703,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 250898
+  },
+  "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Education", "Employment"],
+  "marginals": {
+    "Home location": {
+      "probs": [
+        0.14493539207167852, 0.1356886065253609, 0.13120072698865676, 0.12853829046066528, 0.12394678315490758,
+        0.11752186147358687, 0.11128028122982248, 0.1068880580953216
+      ],
+      "uniqVals": [
+        "Bratislavský",
+        "Trnavský",
+        "Trenčiansky",
+        "Nitriansky",
+        "Žilinský",
+        "Banskobystrický",
+        "Prešovský",
+        "Košický"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.14825148068139243, 0.13875758276271632, 0.1356128785402833, 0.12109303382250955, 0.12017632663472806,
+        0.11611092954108841, 0.09752170204624987, 0.08028362123253274, 0.022427440633245383, 0.011458839847268611,
+        0.005316901689132635, 0.0019450135114668112, 0.0007054659662492327, 0.0003387830911366372
+      ],
+      "uniqVals": [17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 80]
+    },
+    "Sex": {
+      "probs": [0.5148347137083595, 0.4851652862916404],
+      "uniqVals": ["Male", "Female"]
+    },
+    "Marital status": {
+      "probs": [0.5788926177171599, 0.30893829364921205, 0.09165079036102321, 0.020518298272604804],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Religion": {
+      "probs": [
+        0.7594321198255864, 0.1706669642643624, 0.06824287160519414, 0.0007094516496743697, 0.0004384251767650599,
+        0.000434439493339923, 7.572798507760125e-5
+      ],
+      "uniqVals": ["No religion", "Buddhist", "Hindu", "Jewish", "Muslim", "Christian", "Other"]
+    },
+    "Education": {
+      "probs": [0.3961410613077824, 0.39073248889987167, 0.21272389576640707, 0.00040255402593882775],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.835574615979402, 0.164425384020598],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 5426000,
+  "corr": [
+    [
+      1.0, 0.07004594432143521, -9.210190167920481e-16, 0.0762024422984522, 0.26579314382147734, 0.17779398482309555,
+      0.23861311370274396
+    ],
+    [
+      0.07004594432143521, 1.0, 0.08067663664273922, 0.6644210523415801, 0.06136989858142472, 0.26294961785349924,
+      0.27786631511512483
+    ],
+    [
+      -9.210190167920481e-16, 0.08067663664273922, 0.9999999999999996, 0.20452798879043865, 0.05280499057073156,
+      0.18930718446206668, 0.043886090851445334
+    ],
+    [
+      0.0762024422984522, 0.6644210523415801, 0.20452798879043865, 1.0000000000000004, 0.10589960118437153,
+      0.08974874266096625, 0.24780321234734975
+    ],
+    [
+      0.26579314382147734, 0.06136989858142472, 0.05280499057073156, 0.10589960118437153, 1.0000000000000002,
+      0.21895986980213206, 0.08030128848533122
+    ],
+    [
+      0.17779398482309555, 0.26294961785349924, 0.18930718446206668, 0.08974874266096625, 0.21895986980213206,
+      0.9999999999999997, 0.3779460369979204
+    ],
+    [
+      0.23861311370274396, 0.27786631511512483, 0.043886090851445334, 0.24780321234734975, 0.08030128848533122,
+      0.3779460369979204, 0.9999999999999984
+    ]
+  ]
+}

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:where(.content h2) {
+  @apply text-2xl font-semibold text-ink;
+}
+
+:where(.content p) {
+  @apply mt-4 leading-relaxed text-ink/80;
+}
+
+:where(.content a) {
+  @apply underline;
+}
+
+@font-face {
+  font-family: "MD System";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/MDSystem-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "MD System";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/MDSystem-Italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "MD System";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/MDSystem-Semibold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Junicode";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/JunicodeVF-Roman.woff2") format("woff2-variations");
+  size-adjust: 127%;
+}
+@font-face {
+  font-family: "Junicode";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/JunicodeVF-Italic.woff2") format("woff2-variations");
+  size-adjust: 127%;
+}
+
+@keyframes eye-blink {
+  0%,
+  28% {
+    transform: translateY(-100%);
+  }
+  30%,
+  33% {
+    transform: translateY(0%);
+  }
+  35%,
+  73% {
+    transform: translateY(-100%);
+  }
+  75%,
+  77% {
+    transform: translateY(0%);
+  }
+  79%,
+  86% {
+    transform: translateY(-100%);
+  }
+  88%,
+  90% {
+    transform: translateY(0%);
+  }
+  92%,
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@theme {
+  --color-bg: #f1cf4f;
+  --color-ink: #15205c;
+  --color-navy: #15205c;
+  --color-accent: #d83a86;
+  --color-blue: #a8c5dc;
+  --color-green: #a8c97a;
+  --color-muted: #6b6f87;
+  --font-sans: "MD System", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Junicode", ui-serif, Georgia, serif;
+}

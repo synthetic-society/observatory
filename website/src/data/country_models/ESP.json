@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:15:26+00:00",
+  "iso3": "ESP",
+  "name": "Spain",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 3,
+    "ipums_samples": [
+      "Denmark 1885 (15%)",
+      "Dominican Republic 2010",
+      "Ecuador 2010",
+      "Egypt 2006",
+      "Spain 2020 Q4 LFS",
+      "Ethiopia 2007",
+      "Finland 2010",
+      "Fiji 2014",
+      "France 2011",
+      "Ghana 2010"
+    ],
+    "ipums_country_code": 724,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 67285
+  },
+  "avail_var": ["Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+  "marginals": {
+    "Home location": {
+      "probs": [
+        0.15410566991157018, 0.11767853161923163, 0.0982536969606896, 0.09566768224715762, 0.07842758415694434,
+        0.07066954001634837, 0.0643679869213049, 0.04495801441628892, 0.04491342795571078, 0.04076688712194397,
+        0.03299398082782195, 0.03195363008099874, 0.02797057293601843, 0.025206212380173888, 0.022218919521438656,
+        0.021862227836813554, 0.01991528572490154, 0.004205989447870997, 0.0038641599167719403
+      ],
+      "uniqVals": [
+        "Galicia",
+        "Principado de Asturias",
+        "Cantabria",
+        "País Vasco",
+        "Comunidad Foral de Navarra",
+        "La Rioja",
+        "Aragón",
+        "Comunidad de Madrid",
+        "Castilla y León",
+        "Castilla-La Mancha",
+        "Extremadura",
+        "Cataluña",
+        "Comunidad Valenciana",
+        "Islas Baleares",
+        "Andalucía",
+        "Región de Murcia",
+        "Ciudad Autónoma de Ceuta",
+        "Ciudad Autónoma de Melilla",
+        "Canarias"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.1525600059448614, 0.15092516905699635, 0.14905253771271457, 0.1323920636100171, 0.11189715389759976,
+        0.08015159396596566, 0.07934903767555919, 0.07117485323623393, 0.04968417923757153, 0.01407445938916549,
+        0.008738946273315003
+      ],
+      "uniqVals": [17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 65]
+    },
+    "Sex": {
+      "probs": [0.5191201605112581, 0.4808798394887419],
+      "uniqVals": ["Male", "Female"]
+    },
+    "Marital status": {
+      "probs": [0.5476703574347923, 0.3587277996581705, 0.08142973916920562, 0.012172103737831612],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Education": {
+      "probs": [0.43384112357880655, 0.3198781303410864, 0.23742290257858364, 0.00885784350152337],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.8535037526937653, 0.14649624730623467],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 48374000,
+  "corr": [
+    [
+      0.9999999999999998, 0.08515265558164789, 0.007834936860518033, 0.06273982164748278, 0.16439056384805875,
+      0.192803815612837
+    ],
+    [
+      0.08515265558164789, 0.9999999999999992, 0.015182971954345547, 0.6525737636058284, 0.20297032095548484,
+      0.2842778139964103
+    ],
+    [
+      0.007834936860518033, 0.015182971954345547, 1.0000000000000009, 0.14865646931531523, 0.17166567969069887,
+      0.1259816829115721
+    ],
+    [
+      0.06273982164748278, 0.6525737636058284, 0.14865646931531523, 0.9999999999999993, 0.09785057591248802,
+      0.25100494088672115
+    ],
+    [
+      0.16439056384805875, 0.20297032095548484, 0.17166567969069887, 0.09785057591248802, 0.9999999999999987,
+      0.2337570446091587
+    ],
+    [
+      0.192803815612837, 0.2842778139964103, 0.1259816829115721, 0.25100494088672115, 0.2337570446091587,
+      1.000000000000001
+    ]
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-27T07:32:21+00:00",
+  "iso3": "FIN",
+  "name": "Finland",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 3,
+    "ipums_samples": [
+      "Denmark 1885 (15%)",
+      "Dominican Republic 2010",
+      "Ecuador 2010",
+      "Egypt 2006",
+      "Spain 2020 Q4 LFS",
+      "Ethiopia 2007",
+      "Finland 2010",
+      "Fiji 2014",
+      "France 2011",
+      "Ghana 2010"
+    ],
+    "ipums_country_code": 246,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 131283
+  },
+  "avail_var": ["Age", "Sex", "Marital status", "Education", "Employment"],
+  "marginals": {
+    "Age": {
+      "probs": [
+        0.1275565000799799, 0.12235399861368189, 0.12204931331550925, 0.11358667915876389, 0.1112939222900147,
+        0.10806425812938461, 0.10500217088274948, 0.0841540793552859, 0.06402961541098239, 0.038443667496934106,
+        0.0033743896772620977, 9.140558945179497e-5
+      ],
+      "uniqVals": [18, 23, 28, 33, 38, 43, 48, 53, 58, 63, 68, 73]
+    },
+    "Sex": {
+      "probs": [0.5063184113708553, 0.4936815886291447],
+      "uniqVals": ["Male", "Female"]
+    },
+    "Marital status": {
+      "probs": [0.4907794611640502, 0.3787695284233297, 0.1183245355453486, 0.012126474867271466],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Education": {
+      "probs": [0.5938316461384947, 0.233320384208161, 0.1728479696533443],
+      "uniqVals": ["Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.8881804955706375, 0.11181950442936252],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 5564000,
+  "corr": [
+    [0.9999999999999992, 0.05104046570104123, 0.6234475949679096, 0.34374273908575514, 0.25053928600087316],
+    [0.05104046570104123, 0.9999999999999991, 0.13259484944961336, 0.1090807961004717, 0.08002304935979582],
+    [0.6234475949679096, 0.13259484944961336, 0.9999999999999993, 0.15515011787279287, 0.15119247460095],
+    [0.34374273908575514, 0.1090807961004717, 0.15515011787279287, 0.9999999999999992, 0.2897880271712287],
+    [0.25053928600087316, 0.08002304935979582, 0.15119247460095, 0.2897880271712287, 1.0]
+  ]
+}

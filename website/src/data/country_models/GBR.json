@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-27T07:32:23+00:00",
+  "iso3": "GBR",
+  "name": "United Kingdom",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 10,
+    "ipums_samples": [
+      "Thailand 2000",
+      "Turkey 2000",
+      "Trinidad and Tobago 2011",
+      "Tanzania 2012",
+      "Ukraine 2001",
+      "Uganda 2014",
+      "United Kingdom 2001",
+      "United States 2020",
+      "Uruguay 2011",
+      "Venezuela 2001"
+    ],
+    "ipums_country_code": 826,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 819849
+  },
+  "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Race", "Employment"],
+  "marginals": {
+    "Home location": {
+      "probs": [
+        0.1423579220075892, 0.12469857254201688, 0.10931891116534874, 0.09443202345797824, 0.09098992619372592,
+        0.08797473681129087, 0.08355075141885884, 0.08217854751301765, 0.07168149256753378, 0.04467529996377382,
+        0.04010616589152393, 0.028035650467342157
+      ],
+      "uniqVals": [
+        "North East",
+        "North West",
+        "Yorkshire and the Humber",
+        "East Midlands",
+        "West Midlands",
+        "East of England",
+        "South East",
+        "South West",
+        "Outer London, Inner London",
+        "Scotland",
+        "Wales",
+        "Northern Ireland"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.3879629053642805, 0.2976255383613324, 0.11244021764983551, 0.0914766011789976, 0.057067825904526324,
+        0.038396094890644494, 0.010531207576029244, 0.004499609074353936
+      ],
+      "uniqVals": [17, 22, 27, 37, 52, 62, 67, 72]
+    },
+    "Sex": {
+      "probs": [0.542331575692597, 0.45766842430740295],
+      "uniqVals": ["Male", "Female"]
+    },
+    "Marital status": {
+      "probs": [0.5276996129775117, 0.3467736131897459, 0.1125060834373159, 0.013020690395426474],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Religion": {
+      "probs": [
+        0.7551219797792033, 0.18529997597118494, 0.021752786183797262, 0.019053508633906976, 0.01092152335369074,
+        0.00469842617360026, 0.003151799904616582
+      ],
+      "uniqVals": ["No religion", "Buddhist", "Hindu", "Jewish", "Muslim", "Christian", "Other"]
+    },
+    "Race": {
+      "probs": [
+        0.932816896770015, 0.018576591543076833, 0.009713983916550487, 0.008155160279514887, 0.0076013997699576384,
+        0.007067155049283466, 0.0040592840876795605, 0.00391901435508246, 0.003751910412771132, 0.002895655175526225,
+        0.0012831631190621687, 0.00014758815342825324, 1.2197368051921756e-5
+      ],
+      "uniqVals": [
+        "White",
+        "Black African",
+        "Black Caribbean",
+        "Afro-Ecuadorian",
+        "Other Black",
+        "Chinese",
+        "Indian",
+        "Pakistani",
+        "Bangladeshi",
+        "Other Asian",
+        "Mixed race",
+        "Two or more races",
+        "Other"
+      ]
+    },
+    "Employment": {
+      "probs": [0.9440811661659647, 0.05591883383403529],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 67330000,
+  "corr": [
+    [
+      0.9999999999999998, 0.10201270198103606, -7.701648563276432e-16, 0.10745349614809709, 0.31230466805763724,
+      0.5004842318587639, 0.10957335657957532
+    ],
+    [
+      0.10201270198103606, 0.9999999999999988, 0.06639897432921163, 0.7354390735863608, 0.24356786571211864,
+      0.15658173352106391, 0.24522142031788877
+    ],
+    [
+      -7.701648563276432e-16, 0.06639897432921163, 1.0000000000000004, 0.11347077802969738, 0.11735916511668087,
+      0.10981730751561314, 0.11451722209085016
+    ],
+    [
+      0.10745349614809709, 0.7354390735863608, 0.11347077802969738, 0.999999999999999, 0.24677271232848266,
+      0.15658378786973548, 0.28095877320382057
+    ],
+    [
+      0.31230466805763724, 0.24356786571211864, 0.11735916511668087, 0.24677271232848266, 0.9999999999999992,
+      0.8805798637040649, 0.17443044867750943
+    ],
+    [
+      0.5004842318587639, 0.15658173352106391, 0.10981730751561314, 0.15658378786973548, 0.8805798637040649,
+      0.9999999999999986, 0.2820736914151216
+    ],
+    [
+      0.10957335657957532, 0.24522142031788877, 0.11451722209085016, 0.28095877320382057, 0.17443044867750943,
+      0.2820736914151216, 0.9999999999999963
+    ]
+  ]
+}

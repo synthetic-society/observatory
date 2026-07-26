@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:16:51+00:00",
+  "iso3": "MAR",
+  "name": "Morocco",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 6,
+    "ipums_samples": [
+      "Saint Lucia 1991",
+      "Liberia 2008",
+      "Lesotho 2006",
+      "Morocco 2014",
+      "Mali 2009",
+      "Myanmar 2014",
+      "Mongolia 2020",
+      "Mauritius 2011",
+      "Malawi 2018",
+      "Mexico 2020 Q3 LFS"
+    ],
+    "ipums_country_code": 504,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 117428
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.7992557141397282, 0.20074428586027182],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.2664696665190585, 0.17435364648976395, 0.11991177572640256, 0.10993970773580407, 0.10484722553394421,
+        0.07331300882242736, 0.05627277991620397, 0.04395885138127193, 0.028085294818952892, 0.01153046973464591,
+        0.0072895731852709745, 0.003925809857955513, 0.00010219027829819124
+      ],
+      "uniqVals": [
+        "Tanger-Tétouan-Al Hoceima",
+        "Oriental",
+        "Fès-Meknès",
+        "Rabat-Salé-Kénitra",
+        "Béni Mellal-Khénifra",
+        "Casablanca-Settat",
+        "Marrakech-Safi",
+        "Drâa-Tafilalet",
+        "Souss-Massa",
+        "Guelmim-Oued Noun",
+        "Laayoune-Sakia El Hamra",
+        "Dakhla-Oued Ed-Dahab",
+        "Unknown"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.1555761828524713, 0.15385597983445176, 0.1521017133903328, 0.13499335763191062, 0.12082297237456144,
+        0.1177913274517151, 0.070000340634261, 0.02330789930851245, 0.014757979357563783, 0.011028034199679803,
+        0.009912456994924549, 0.007229962189597029, 0.006386892393636952, 0.006284702115338761, 0.005066934632285316,
+        0.003976904997104609, 0.003253057192492421, 0.002265217835609906, 0.0010048710699322137, 0.0003065708348945737,
+        7.664270872364343e-5
+      ],
+      "uniqVals": [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 75]
+    },
+    "Marital status": {
+      "probs": [0.7563187655414382, 0.14908710018053617, 0.09459413427802568],
+      "uniqVals": ["Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.24243791940593384, 0.22866777940525257, 0.16223558265490343, 0.1574411554314133, 0.08347242565657254,
+        0.04555983240794359, 0.02820451681030078, 0.018504956228497463, 0.013242156896140615, 0.012177674830534455,
+        0.00805600027250741
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6", "7", "8", "9", "10"]
+    },
+    "Education": {
+      "probs": [0.49010457471812513, 0.2207224852675682, 0.17856899546956434, 0.11060394454474232],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.828422522737337, 0.1715774772626631],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 37840000,
+  "corr": [
+    [
+      1.000000000000001, 0.39097596703686377, 0.20331535534931688, 0.16834619399138195, 0.45628274701667115,
+      0.6062014273513644, 0.09365778207117813
+    ],
+    [
+      0.39097596703686377, 0.9999999999999991, 0.07835197576746833, 0.11549751709355967, 0.16999840922642057,
+      0.21115881204558978, 0.1425117550125642
+    ],
+    [
+      0.20331535534931688, 0.07835197576746833, 1.0000000000000002, 0.40994334203481464, 0.5003034491091956,
+      0.3347287909813998, 0.2800455844244442
+    ],
+    [
+      0.16834619399138195, 0.11549751709355967, 0.40994334203481464, 1.0000000000000007, 0.4230050880627903,
+      0.43666695614572776, 0.12508679212157658
+    ],
+    [
+      0.45628274701667115, 0.16999840922642057, 0.5003034491091956, 0.4230050880627903, 1.0000000000000007,
+      0.43963393425791986, 0.18342177751433708
+    ],
+    [
+      0.6062014273513644, 0.21115881204558978, 0.3347287909813998, 0.43666695614572776, 0.43963393425791986,
+      1.0000000000000002, 0.22686028477733017
+    ],
+    [
+      0.09365778207117813, 0.1425117550125642, 0.2800455844244442, 0.12508679212157658, 0.18342177751433708,
+      0.22686028477733017, 0.999999999999999
+    ]
+  ]
+}

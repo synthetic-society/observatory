@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:17:59+00:00",
+  "iso3": "PSE",
+  "name": "Palestine, State of",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 8,
+    "ipums_samples": [
+      "Philippines 2019 Q3 LFS",
+      "Pakistan 1998",
+      "Poland 2011",
+      "Puerto Rico 2020",
+      "Palestine 2017",
+      "Portugal 2011",
+      "Paraguay 2002",
+      "Romania 2011",
+      "Russia 2010",
+      "Rwanda 2012"
+    ],
+    "ipums_country_code": 275,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 12473
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.8505572035596889, 0.14944279644031108],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.12033993425799727, 0.11913733664715787, 0.11200192415617734, 0.09564659664876132, 0.09284053555680269,
+        0.08025334723001684, 0.07015152729896576, 0.06951014190651808, 0.05948849514952297, 0.044576284775114244,
+        0.042732301771827144, 0.02292952778000481, 0.02268900825783693, 0.022288142387557122, 0.0161949811593041,
+        0.009219915016435501
+      ],
+      "uniqVals": [
+        "Jenin",
+        "Tubas and Northern Valley",
+        "Tulkarm",
+        "Nablus",
+        "Qalqilia",
+        "Salfit",
+        "Ramallah and Al-Bireh",
+        "Ariha and Al Aghwar (Jericho)",
+        "Jerusalem",
+        "Bethlehem",
+        "Hebron",
+        "North Gaza",
+        "Gaza",
+        "Deir Al-Balah",
+        "Khan Yunis",
+        "Rafah"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.21157700633368076, 0.21037440872284133, 0.1664395093401748, 0.12531067104946686, 0.08827066463561292,
+        0.08722841337288544, 0.06205403671931372, 0.0360779283251824, 0.006333680750420909, 0.0029664074400705524,
+        0.0020845025254549827, 0.0007215585665036479, 0.00040086587027980436, 0.00016034634811192176
+      ],
+      "uniqVals": [17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82]
+    },
+    "Marital status": {
+      "probs": [0.9215906357732703, 0.051791870440150725, 0.02661749378657901],
+      "uniqVals": ["Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.17461717309388278, 0.1729335364387076, 0.161869638418985, 0.12875811753387317, 0.12154253186883669,
+        0.11055880702317004, 0.06237472941553756, 0.03455463801811914, 0.016916539725807745, 0.00809749057965205,
+        0.003928485528742083, 0.0023250220476228652, 0.0007215585665036479, 0.00040086587027980436,
+        0.00024051952216788263, 0.00016034634811192176
+      ],
+      "uniqVals": [
+        "No children",
+        "1 child",
+        "2 children",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    "Education": {
+      "probs": [0.6684839252786018, 0.2030786498837489, 0.10847430449771507, 0.01996312033993426],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.6899703359255993, 0.3100296640744007],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 5371000,
+  "corr": [
+    [
+      0.9999999999999991, 0.6581867781060061, 0.09402459859848133, -1.0860862381129052e-15, -5.117388658695346e-16,
+      0.1606648450891181, 0.2594083375447985
+    ],
+    [
+      0.6581867781060061, 0.9999999999999987, 0.19798062002786743, 0.12377510196724416, 0.12493919861026263,
+      0.22123886924679176, 0.5385379868009758
+    ],
+    [
+      0.09402459859848133, 0.19798062002786743, 0.9999999999999983, 0.353891232131745, 0.6802480186014345,
+      0.38231041474876504, 0.5785408317879157
+    ],
+    [
+      -1.0860862381129052e-15, 0.12377510196724416, 0.353891232131745, 0.9999999999999999, 0.3316617750968964,
+      0.3712634595518668, 0.1409798177839983
+    ],
+    [
+      -5.117388658695346e-16, 0.12493919861026263, 0.6802480186014345, 0.3316617750968964, 0.9999999999999992,
+      0.2816415479146053, 0.2817108713679786
+    ],
+    [
+      0.1606648450891181, 0.22123886924679176, 0.38231041474876504, 0.3712634595518668, 0.2816415479146053,
+      0.999999999999999, 0.12190751868739841
+    ],
+    [
+      0.2594083375447985, 0.5385379868009758, 0.5785408317879157, 0.1409798177839983, 0.2817108713679786,
+      0.12190751868739841, 0.9999999999999969
+    ]
+  ]
+}

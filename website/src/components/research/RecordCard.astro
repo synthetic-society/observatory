@@ -1,0 +1,39 @@
+---
+const recordTop: Array<[string, string]> = [
+  ["ID", "54b8617e"],
+  ["Date of birth", "1955-01-01"],
+  ["ZIP Code", "02139"],
+  ["Gender", "M"],
+  ["Occupation", "Retired"],
+];
+const recordBottom: Array<[string, string]> = [
+  ["Premium (p/mo)", "10,000–15,000"],
+  ["Overall deductible", "5,000"],
+  ["Diabetic", "No"],
+  ["ER (last 12mo)", "Yes"],
+  ["Pediatrics (last 12mo)", "No"],
+];
+---
+
+<figure class="w-full max-w-95 mx-auto md:mx-0">
+  <div class="rounded-sm border border-accent/50 bg-accent/8 px-6 py-5">
+    <dl class="grid grid-cols-[auto_1fr] gap-x-8 gap-y-1.5 text-[15px] leading-snug text-ink">
+      {recordTop.map(([field, value]) => (
+        <Fragment>
+          <dt class="font-semibold">{field}</dt>
+          <dd class="tabular-nums">{value}</dd>
+        </Fragment>
+      ))}
+      <dt class="text-ink/40">…</dt>
+      <dd class="text-ink/40">…</dd>
+      {recordBottom.map(([field, value], i) => (
+        <Fragment key={field}>
+          <dt class:list={["font-semibold", i === 0 && "pt-3"]}>{field}</dt>
+          <dd class:list={["tabular-nums", i === 0 && "pt-3"]}>{value}</dd>
+        </Fragment>
+      ))}
+      <dt class="text-ink/40">…</dt>
+      <dd class="text-ink/40">…</dd>
+    </dl>
+  </div>
+</figure>

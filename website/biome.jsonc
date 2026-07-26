@@ -1,0 +1,44 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.5/schema.json",
+  "files": {
+    "includes": [
+      "*.{jsonc,mjs}",
+      "{src,tests}/**/*.{astro,ts,tsx,css}",
+      "!src/model/generated",
+      "!src/data/country_models",
+      "!!dist",
+      "!!.astro",
+    ],
+  },
+  "formatter": { "indentStyle": "space", "indentWidth": 2, "lineWidth": 120 },
+  "linter": {
+    "domains": {
+      "react": "recommended",
+      "types": "recommended",
+      "project": "recommended",
+    },
+    "rules": {
+      "style": { "useImportType": "off" },
+      "a11y": { "noSvgWithoutTitle": "off" },
+      "nursery": {
+        "noFloatingPromises": "error",
+        "noMisusedPromises": "error",
+        "useSortedClasses": "error",
+      },
+    },
+  },
+  "javascript": {
+    "formatter": { "quoteStyle": "double", "semicolons": "always" },
+  },
+  "css": {
+    "parser": { "tailwindDirectives": true },
+    "formatter": { "enabled": true },
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.jsonc"],
+      "json": { "formatter": { "trailingCommas": "all" } },
+    },
+  ],
+  "html": { "experimentalFullSupportEnabled": true },
+}

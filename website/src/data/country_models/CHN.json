@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:14:56+00:00",
+  "iso3": "CHN",
+  "name": "China",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 2,
+    "ipums_samples": [
+      "Canada 2011",
+      "Switzerland 2011",
+      "Côte d'Ivoire 1998",
+      "Chile 2017",
+      "Cameroon 2005",
+      "China 2000",
+      "Colombia 2005",
+      "Costa Rica 2011",
+      "Cuba 2012",
+      "Germany 1987 (West)"
+    ],
+    "ipums_country_code": 156,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 3353335
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.7360263737443471, 0.26397362625565296],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.08114101334939694, 0.07883942403607155, 0.07767043853357926, 0.07343405892939417, 0.060840327614151285,
+        0.05732293373611643, 0.046914787815711824, 0.04552930142678856, 0.04260981977643152, 0.03995246523237315,
+        0.03736071701753627, 0.033137458679195486, 0.03207314509287023, 0.03110276784156668, 0.028300482952046246,
+        0.02809859438439643, 0.028002868785850503, 0.02658785954877756, 0.025417084782761043, 0.02289899458300468,
+        0.020576530528563355, 0.020062713686524014, 0.01620655258123629, 0.014298303032652568, 0.012181306072909506,
+        0.008776337586313326, 0.004637174633611017, 0.004035982089472123, 0.001990555670697977
+      ],
+      "uniqVals": [
+        "Beijing",
+        "Tianjin",
+        "Hebei",
+        "Shanxi",
+        "Inner Mongolia",
+        "Liaoning",
+        "Jilin",
+        "Heilongjiang",
+        "Shanghai",
+        "Jiangsu",
+        "Zhejiang",
+        "Anhui",
+        "Fujian",
+        "Jiangxi",
+        "Shandong",
+        "Henan",
+        "Hubei",
+        "Hunan",
+        "Guangdong, Hainan",
+        "Guangxi",
+        "Sichuan, Chongqing",
+        "Guizhou",
+        "Yunnan",
+        "Tibet",
+        "Shaanxi",
+        "Gansu",
+        "Qinghai",
+        "Ningxia",
+        "Xinjiang"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.03919679960397634, 0.03795683998168987, 0.03748179051600869, 0.03455366075861791, 0.03434729903215754,
+        0.03409859140229055, 0.034097100349353704, 0.03388656367467014, 0.033217677327198145, 0.03147910960282823,
+        0.0303387523167235, 0.030261217564007174, 0.029859527902819132, 0.029225233983482115, 0.027850184965116816,
+        0.02771539377962536, 0.027001775844047792, 0.02689680571729338, 0.026799290855223232, 0.026542233328909877,
+        0.026247899479175208, 0.026172153989983106, 0.024930405104172413, 0.02477324812462817, 0.024718079165964628,
+        0.024648894309694677, 0.02446668764081131, 0.024221856748580146, 0.02382970982618796, 0.02350853702358995,
+        0.02333676772526455, 0.020827922053716672, 0.020637365488386933, 0.0204134093372717, 0.018163708666148776,
+        0.01629750681038429
+      ],
+      "uniqVals": [
+        15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+        43, 44, 45, 46, 47, 48, 49, 50
+      ]
+    },
+    "Marital status": {
+      "probs": [0.7611297409891944, 0.22176639077217158, 0.009386476448073337, 0.007717391790560741],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.3394027140145557, 0.267125712164159, 0.25424420763210354, 0.09802569680631372, 0.029442033080500456,
+        0.00813041345406886, 0.0023716688013574547, 0.0007672958413042538, 0.00029433384973466715, 0.000107952232628115,
+        5.93439068867262e-5, 1.6401582305376587e-5, 1.222663408218982e-5
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+    },
+    "Education": {
+      "probs": [0.7301274701155716, 0.15862507026586964, 0.10216068481079284, 0.009086774807766],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    }
+  },
+  "pop_num": 1410710000,
+  "corr": [
+    [
+      1.0000129463257816, 0.34024973036072514, 0.07039644671267775, 0.1726187505149696, 0.3738380023209361,
+      0.5495437071454318
+    ],
+    [
+      0.34024973036072514, 1.0000028471418956, 0.14964347362639663, 0.2036069932306359, 0.3168164208157801,
+      0.359810236449821
+    ],
+    [
+      0.07039644671267775, 0.14964347362639663, 1.0017947229795192, 0.9326769808317712, 0.8416392800414837,
+      0.35891738923912003
+    ],
+    [
+      0.1726187505149696, 0.2036069932306359, 0.9326769808317712, 1.0129575007716116, 0.9689072948548523,
+      0.27054531290683226
+    ],
+    [
+      0.3738380023209361, 0.3168164208157801, 0.8416392800414837, 0.9689072948548523, 1.0071786700843866,
+      0.4473114761239234
+    ],
+    [
+      0.5495437071454318, 0.359810236449821, 0.35891738923912003, 0.27054531290683226, 0.4473114761239234,
+      1.0003887230541157
+    ]
+  ]
+}

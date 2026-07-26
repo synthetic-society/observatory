@@ -1,0 +1,42 @@
+---
+import PortraitRotator from "../components/PortraitRotator";
+import { buttonClasses } from "../components/ui/Button";
+import Base from "../layouts/Base.astro";
+---
+
+<Base>
+  <section class="mx-auto max-w-7xl px-6 pt-10 pb-12">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-[1.4fr_1fr]">
+      <h1
+        class="font-sans text-6xl sm:text-7xl font-semibold leading-[1.2]  text-ink"
+      >
+        In a crowd of <br />
+        <span class="font-serif font-semibold italic text-accent">67 million</span>,<br />
+        how many look<br />
+        just like you?
+      </h1>
+
+      <div class="flex flex-col justify-end gap-6 pb-2">
+        <p class="max-w-md text-lg leading-relaxed text-ink">
+          “Anonymised” datasets are rarely anonymous. With few everyday details such as approximate location or demographics, our model trained on census data can
+          pick a single person out of an entire country.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="/quiz" class={buttonClasses({ size: "lg" })}>Take the quiz →</a>
+          <span class="text-xs text-ink/70">&lt;2 minutes</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-md border border-navy/50">
+      <PortraitRotator client:visible />
+    </div>
+
+    <p class="mt-8 max-w-3xl text-sm text-ink">
+      Built by privacy researchers at Oxford, Imperial College London and UCLouvain, using census datasets across 103 countries
+      from IPUMS. The underlying model was published in{" "}
+      <a class="underline" href="https://doi.org/10.1038/s41467-019-10933-3">Nature Communications</a>.
+      Everything runs in your browser.
+    </p>
+  </section>
+</Base>

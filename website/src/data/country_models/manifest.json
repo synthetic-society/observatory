@@ -1,0 +1,2733 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-27T07:32:36+00:00",
+  "countries": [
+    {
+      "iso3": "ARG",
+      "name": "Argentina",
+      "file": "ARG.json",
+      "n_persons": 1982973,
+      "pop_num": 46654000,
+      "n_attrs": 5,
+      "avail_var": ["Home location", "Age", "Sex", "Education", "Employment"],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "ARM",
+      "name": "Armenia",
+      "file": "ARM.json",
+      "n_persons": 62165,
+      "pop_num": 2778000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "AUT",
+      "name": "Austria",
+      "file": "AUT.json",
+      "n_persons": 426811,
+      "pop_num": 9133000,
+      "n_attrs": 6,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BEN",
+      "name": "Benin",
+      "file": "BEN.json",
+      "n_persons": 131291,
+      "pop_num": 13712000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BFA",
+      "name": "Burkina Faso",
+      "file": "BFA.json",
+      "n_persons": 275202,
+      "pop_num": 23251000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "name": "Bangladesh",
+      "file": "BGD.json",
+      "n_persons": 2179811,
+      "pop_num": 172954000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BLR",
+      "name": "Belarus",
+      "file": "BLR.json",
+      "n_persons": 232019,
+      "pop_num": 9498000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BOL",
+      "name": "Bolivia",
+      "file": "BOL.json",
+      "n_persons": 162436,
+      "pop_num": 12388000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BRA",
+      "name": "Brazil",
+      "file": "BRA.json",
+      "n_persons": 4153655,
+      "pop_num": 216422000,
+      "n_attrs": 9,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "BWA",
+      "name": "Botswana",
+      "file": "BWA.json",
+      "n_persons": 38752,
+      "pop_num": 2675000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Armenia 2011",
+        "Argentina 2010",
+        "Austria 2011",
+        "Bangladesh 2011",
+        "Burkina Faso 2006",
+        "Benin 2013",
+        "Bolivia 2012",
+        "Brazil 2010",
+        "Botswana 2011",
+        "Belarus 2009"
+      ]
+    },
+    {
+      "iso3": "CAN",
+      "name": "Canada",
+      "file": "CAN.json",
+      "n_persons": 506014,
+      "pop_num": 40098000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "file": "CHE.json",
+      "n_persons": 149620,
+      "pop_num": 8849000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CHL",
+      "name": "Chile",
+      "file": "CHL.json",
+      "n_persons": 342015,
+      "pop_num": 19629000,
+      "n_attrs": 6,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Children born", "Education", "Employment"],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CHN",
+      "name": "China",
+      "file": "CHN.json",
+      "n_persons": 3353335,
+      "pop_num": 1410710000,
+      "n_attrs": 6,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education"],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CIV",
+      "name": "Côte d'Ivoire",
+      "file": "CIV.json",
+      "n_persons": 218767,
+      "pop_num": 28873000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CMR",
+      "name": "Cameroon",
+      "file": "CMR.json",
+      "n_persons": 246461,
+      "pop_num": 28647000,
+      "n_attrs": 9,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "COL",
+      "name": "Colombia",
+      "file": "COL.json",
+      "n_persons": 339702,
+      "pop_num": 52085000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CRI",
+      "name": "Costa Rica",
+      "file": "CRI.json",
+      "n_persons": 54828,
+      "pop_num": 5212000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "CUB",
+      "name": "Cuba",
+      "file": "CUB.json",
+      "n_persons": 501949,
+      "pop_num": 11194000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Race", "Education", "Employment"],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "DEU",
+      "name": "Germany",
+      "file": "DEU.json",
+      "n_persons": 1458641,
+      "pop_num": 84482000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Canada 2011",
+        "Switzerland 2011",
+        "Côte d'Ivoire 1998",
+        "Chile 2017",
+        "Cameroon 2005",
+        "China 2000",
+        "Colombia 2005",
+        "Costa Rica 2011",
+        "Cuba 2012",
+        "Germany 1987 (West)"
+      ]
+    },
+    {
+      "iso3": "DNK",
+      "name": "Denmark",
+      "file": "DNK.json",
+      "n_persons": 323951,
+      "pop_num": 5933000,
+      "n_attrs": 3,
+      "avail_var": ["Age", "Sex", "Marital status"],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "DOM",
+      "name": "Dominican Republic",
+      "file": "DOM.json",
+      "n_persons": 124699,
+      "pop_num": 11332000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "ECU",
+      "name": "Ecuador",
+      "file": "ECU.json",
+      "n_persons": 216523,
+      "pop_num": 17765000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "EGY",
+      "name": "Egypt",
+      "file": "EGY.json",
+      "n_persons": 2214215,
+      "pop_num": 112717000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "ESP",
+      "name": "Spain",
+      "file": "ESP.json",
+      "n_persons": 67285,
+      "pop_num": 48374000,
+      "n_attrs": 6,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "ETH",
+      "name": "Ethiopia",
+      "file": "ETH.json",
+      "n_persons": 291361,
+      "pop_num": 126527000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "FIN",
+      "name": "Finland",
+      "file": "FIN.json",
+      "n_persons": 131283,
+      "pop_num": 5564000,
+      "n_attrs": 5,
+      "avail_var": ["Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "FJI",
+      "name": "Fiji",
+      "file": "FJI.json",
+      "n_persons": 36252,
+      "pop_num": 924000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "FRA",
+      "name": "France",
+      "file": "FRA.json",
+      "n_persons": 9765388,
+      "pop_num": 68170000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "file": "GBR.json",
+      "n_persons": 819849,
+      "pop_num": 67330000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Race", "Employment"],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "GHA",
+      "name": "Ghana",
+      "file": "GHA.json",
+      "n_persons": 568096,
+      "pop_num": 33788000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Denmark 1885 (15%)",
+        "Dominican Republic 2010",
+        "Ecuador 2010",
+        "Egypt 2006",
+        "Spain 2020 Q4 LFS",
+        "Ethiopia 2007",
+        "Finland 2010",
+        "Fiji 2014",
+        "France 2011",
+        "Ghana 2010"
+      ]
+    },
+    {
+      "iso3": "GIN",
+      "name": "Guinea",
+      "file": "GIN.json",
+      "n_persons": 161849,
+      "pop_num": 14191000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "GRC",
+      "name": "Greece",
+      "file": "GRC.json",
+      "n_persons": 185230,
+      "pop_num": 10394000,
+      "n_attrs": 6,
+      "avail_var": ["Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "GTM",
+      "name": "Guatemala",
+      "file": "GTM.json",
+      "n_persons": 87428,
+      "pop_num": 17602000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "HND",
+      "name": "Honduras",
+      "file": "HND.json",
+      "n_persons": 60163,
+      "pop_num": 10593000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "HTI",
+      "name": "Haiti",
+      "file": "HTI.json",
+      "n_persons": 119858,
+      "pop_num": 11724000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "HUN",
+      "name": "Hungary",
+      "file": "HUN.json",
+      "n_persons": 105517,
+      "pop_num": 9590000,
+      "n_attrs": 5,
+      "avail_var": ["Age", "Marital status", "Children born", "Education", "Employment"],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "IDN",
+      "name": "Indonesia",
+      "file": "IDN.json",
+      "n_persons": 4686778,
+      "pop_num": 277534000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "IND",
+      "name": "India",
+      "file": "IND.json",
+      "n_persons": 167625,
+      "pop_num": 1438070000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "IRL",
+      "name": "Ireland",
+      "file": "IRL.json",
+      "n_persons": 99923,
+      "pop_num": 5271000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "IRN",
+      "name": "Iran",
+      "file": "IRN.json",
+      "n_persons": 43566,
+      "pop_num": 89173000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "IRQ",
+      "name": "Iraq",
+      "file": "IRQ.json",
+      "n_persons": 28575,
+      "pop_num": 45504000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "ISL",
+      "name": "Iceland",
+      "file": "ISL.json",
+      "n_persons": 32439,
+      "pop_num": 388000,
+      "n_attrs": 4,
+      "avail_var": ["Age", "Marital status", "Children born", "Religion"],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "ISR",
+      "name": "Israel",
+      "file": "ISR.json",
+      "n_persons": 99363,
+      "pop_num": 9756000,
+      "n_attrs": 6,
+      "avail_var": ["Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Guinea 2014",
+        "Greece 2011",
+        "Guatemala 2002",
+        "Honduras 2013",
+        "Haiti 2003",
+        "Hungary 2011",
+        "Indonesia 2010",
+        "Ireland 2016",
+        "Israel 2008",
+        "India 2009-10 employment survey"
+      ]
+    },
+    {
+      "iso3": "ITA",
+      "name": "Italy",
+      "file": "ITA.json",
+      "n_persons": 38513,
+      "pop_num": 58997000,
+      "n_attrs": 7,
+      "avail_var": ["WAVE", "Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "JAM",
+      "name": "Jamaica",
+      "file": "JAM.json",
+      "n_persons": 26105,
+      "pop_num": 2826000,
+      "n_attrs": 10,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "JOR",
+      "name": "Jordan",
+      "file": "JOR.json",
+      "n_persons": 144931,
+      "pop_num": 11337000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "KEN",
+      "name": "Kenya",
+      "file": "KEN.json",
+      "n_persons": 1048519,
+      "pop_num": 55101000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "KGZ",
+      "name": "Kyrgyzstan",
+      "file": "KGZ.json",
+      "n_persons": 109744,
+      "pop_num": 6970000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "KHM",
+      "name": "Cambodia",
+      "file": "KHM.json",
+      "n_persons": 414732,
+      "pop_num": 16944000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "LAO",
+      "name": "Laos",
+      "file": "LAO.json",
+      "n_persons": 135867,
+      "pop_num": 7634000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Iraq 1997",
+        "Iran 2011",
+        "Iceland 1910 (100%)",
+        "Italy 2020 Q1 LFS",
+        "Jamaica 2001",
+        "Jordan 2004",
+        "Kenya 2019",
+        "Kyrgyzstan 2009",
+        "Cambodia 2019",
+        "Laos 2015"
+      ]
+    },
+    {
+      "iso3": "LBR",
+      "name": "Liberia",
+      "file": "LBR.json",
+      "n_persons": 44850,
+      "pop_num": 5418000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "LCA",
+      "name": "Saint Lucia",
+      "file": "LCA.json",
+      "n_persons": 1958,
+      "pop_num": 180000,
+      "n_attrs": 9,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "LSO",
+      "name": "Lesotho",
+      "file": "LSO.json",
+      "n_persons": 16267,
+      "pop_num": 2311000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MAR",
+      "name": "Morocco",
+      "file": "MAR.json",
+      "n_persons": 117428,
+      "pop_num": 37840000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MEX",
+      "name": "Mexico",
+      "file": "MEX.json",
+      "n_persons": 49994,
+      "pop_num": 128450000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MLI",
+      "name": "Mali",
+      "file": "MLI.json",
+      "n_persons": 135459,
+      "pop_num": 23293000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "name": "Myanmar",
+      "file": "MMR.json",
+      "n_persons": 521893,
+      "pop_num": 54578000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MNG",
+      "name": "Mongolia",
+      "file": "MNG.json",
+      "n_persons": 15987,
+      "pop_num": 3447000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MOZ",
+      "name": "Mozambique",
+      "file": "MOZ.json",
+      "n_persons": 241902,
+      "pop_num": 33897000,
+      "n_attrs": 9,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "MUS",
+      "name": "Mauritius",
+      "file": "MUS.json",
+      "n_persons": 15510,
+      "pop_num": 1262000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MWI",
+      "name": "Malawi",
+      "file": "MWI.json",
+      "n_persons": 369653,
+      "pop_num": 20932000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Saint Lucia 1991",
+        "Liberia 2008",
+        "Lesotho 2006",
+        "Morocco 2014",
+        "Mali 2009",
+        "Myanmar 2014",
+        "Mongolia 2020",
+        "Mauritius 2011",
+        "Malawi 2018",
+        "Mexico 2020 Q3 LFS"
+      ]
+    },
+    {
+      "iso3": "MYS",
+      "name": "Malaysia",
+      "file": "MYS.json",
+      "n_persons": 163164,
+      "pop_num": 34308000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "NGA",
+      "name": "Nigeria",
+      "file": "NGA.json",
+      "n_persons": 29814,
+      "pop_num": 223804000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "NIC",
+      "name": "Nicaragua",
+      "file": "NIC.json",
+      "n_persons": 53193,
+      "pop_num": 6850000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "file": "NLD.json",
+      "n_persons": 247439,
+      "pop_num": 17880000,
+      "n_attrs": 4,
+      "avail_var": ["Age", "Sex", "Marital status", "Employment"],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "NOR",
+      "name": "Norway",
+      "file": "NOR.json",
+      "n_persons": 2396461,
+      "pop_num": 5520000,
+      "n_attrs": 5,
+      "avail_var": ["Urban/rural", "Age", "Sex", "Marital status", "Religion"],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "NPL",
+      "name": "Nepal",
+      "file": "NPL.json",
+      "n_persons": 354971,
+      "pop_num": 30897000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "name": "Pakistan",
+      "file": "PAK.json",
+      "n_persons": 11135337,
+      "pop_num": 240486000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Sex", "Marital status", "Religion", "Education"],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PAN",
+      "name": "Panama",
+      "file": "PAN.json",
+      "n_persons": 49706,
+      "pop_num": 4468000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "PER",
+      "name": "Peru",
+      "file": "PER.json",
+      "n_persons": 510987,
+      "pop_num": 34352000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "PHL",
+      "name": "Philippines",
+      "file": "PHL.json",
+      "n_persons": 71103,
+      "pop_num": 117337000,
+      "n_attrs": 6,
+      "avail_var": ["Urban/rural", "Age", "Sex", "Marital status", "Education", "Employment"],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PNG",
+      "name": "Papua New Guinea",
+      "file": "PNG.json",
+      "n_persons": 104096,
+      "pop_num": 10329000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Malaysia 2000",
+        "Mozambique 2017",
+        "Nigeria 2010-2011",
+        "Nicaragua 2005",
+        "Netherlands 2011",
+        "Norway 1910 (100%)",
+        "Nepal 2011",
+        "Panama 2010",
+        "Peru 2017",
+        "Papua New Guinea 2000"
+      ]
+    },
+    {
+      "iso3": "POL",
+      "name": "Poland",
+      "file": "POL.json",
+      "n_persons": 3247718,
+      "pop_num": 36821000,
+      "n_attrs": 5,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Education"],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PRI",
+      "name": "Puerto Rico",
+      "file": "PRI.json",
+      "n_persons": 44949,
+      "pop_num": 3221000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Race", "Education", "Employment"],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PRT",
+      "name": "Portugal",
+      "file": "PRT.json",
+      "n_persons": 230874,
+      "pop_num": 10412000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PRY",
+      "name": "Paraguay",
+      "file": "PRY.json",
+      "n_persons": 59851,
+      "pop_num": 6862000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "PSE",
+      "name": "Palestine, State of",
+      "file": "PSE.json",
+      "n_persons": 12473,
+      "pop_num": 5371000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "ROU",
+      "name": "Romania",
+      "file": "ROU.json",
+      "n_persons": 379996,
+      "pop_num": 19051000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "RUS",
+      "name": "Russian Federation",
+      "file": "RUS.json",
+      "n_persons": 1715933,
+      "pop_num": 143826000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "RWA",
+      "name": "Rwanda",
+      "file": "RWA.json",
+      "n_persons": 183770,
+      "pop_num": 13954000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Philippines 2019 Q3 LFS",
+        "Pakistan 1998",
+        "Poland 2011",
+        "Puerto Rico 2020",
+        "Palestine 2017",
+        "Portugal 2011",
+        "Paraguay 2002",
+        "Romania 2011",
+        "Russia 2010",
+        "Rwanda 2012"
+      ]
+    },
+    {
+      "iso3": "SDN",
+      "name": "Sudan",
+      "file": "SDN.json",
+      "n_persons": 244413,
+      "pop_num": 48109000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SEN",
+      "name": "Senegal",
+      "file": "SEN.json",
+      "n_persons": 126723,
+      "pop_num": 17763000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SLE",
+      "name": "Sierra Leone",
+      "file": "SLE.json",
+      "n_persons": 139340,
+      "pop_num": 8606000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SLV",
+      "name": "El Salvador",
+      "file": "SLV.json",
+      "n_persons": 79979,
+      "pop_num": 6364000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SSD",
+      "name": "South Sudan",
+      "file": "SSD.json",
+      "n_persons": 111374,
+      "pop_num": 11089000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SUR",
+      "name": "Suriname",
+      "file": "SUR.json",
+      "n_persons": 7912,
+      "pop_num": 624000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SVK",
+      "name": "Slovakia",
+      "file": "SVK.json",
+      "n_persons": 250898,
+      "pop_num": 5426000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "file": "SVN.json",
+      "n_persons": 37884,
+      "pop_num": 2118000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "SWE",
+      "name": "Sweden",
+      "file": "SWE.json",
+      "n_persons": 5585112,
+      "pop_num": 10551000,
+      "n_attrs": 5,
+      "avail_var": ["Urban/rural", "Age", "Sex", "Marital status", "Religion"],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "TGO",
+      "name": "Togo",
+      "file": "TGO.json",
+      "n_persons": 122289,
+      "pop_num": 9054000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Sudan 2008",
+        "Sweden 1910 (100%)",
+        "Slovenia 2002",
+        "Slovakia 2011",
+        "Sierra Leone 2015",
+        "Senegal 2013",
+        "Suriname 2012",
+        "South Sudan 2008",
+        "El Salvador 2007",
+        "Togo 2010"
+      ]
+    },
+    {
+      "iso3": "THA",
+      "name": "Thailand",
+      "file": "THA.json",
+      "n_persons": 161061,
+      "pop_num": 71801000,
+      "n_attrs": 7,
+      "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Religion", "Education"],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "TTO",
+      "name": "Trinidad and Tobago",
+      "file": "TTO.json",
+      "n_persons": 16496,
+      "pop_num": 1535000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "TZA",
+      "name": "Tanzania",
+      "file": "TZA.json",
+      "n_persons": 916004,
+      "pop_num": 67438000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "UGA",
+      "name": "Uganda",
+      "file": "UGA.json",
+      "n_persons": 730662,
+      "pop_num": 48582000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "file": "UKR.json",
+      "n_persons": 351321,
+      "pop_num": 36744000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "URY",
+      "name": "Uruguay",
+      "file": "URY.json",
+      "n_persons": 70431,
+      "pop_num": 3423000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Marital status", "Children born", "Race", "Education", "Employment"],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "USA",
+      "name": "United States",
+      "file": "USA.json",
+      "n_persons": 7555603,
+      "pop_num": 334915000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Sex", "Marital status", "Race", "Education", "Employment"],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "VEN",
+      "name": "Venezuela",
+      "file": "VEN.json",
+      "n_persons": 268986,
+      "pop_num": 28838000,
+      "n_attrs": 7,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": [
+        "Thailand 2000",
+        "Turkey 2000",
+        "Trinidad and Tobago 2011",
+        "Tanzania 2012",
+        "Ukraine 2001",
+        "Uganda 2014",
+        "United Kingdom 2001",
+        "United States 2020",
+        "Uruguay 2011",
+        "Venezuela 2001"
+      ]
+    },
+    {
+      "iso3": "VNM",
+      "name": "Vietnam",
+      "file": "VNM.json",
+      "n_persons": 1619744,
+      "pop_num": 100352000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": ["Vietnam 2019", "South Africa 2016", "Zambia 2010", "Zimbabwe 2012"]
+    },
+    {
+      "iso3": "ZAF",
+      "name": "South Africa",
+      "file": "ZAF.json",
+      "n_persons": 987902,
+      "pop_num": 60414000,
+      "n_attrs": 8,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Marital status",
+        "Children born",
+        "Religion",
+        "Race",
+        "Education"
+      ],
+      "ipums_samples": ["Vietnam 2019", "South Africa 2016", "Zambia 2010", "Zimbabwe 2012"]
+    },
+    {
+      "iso3": "ZMB",
+      "name": "Zambia",
+      "file": "ZMB.json",
+      "n_persons": 174748,
+      "pop_num": 20570000,
+      "n_attrs": 7,
+      "avail_var": ["Home location", "Age", "Marital status", "Children born", "Religion", "Education", "Employment"],
+      "ipums_samples": ["Vietnam 2019", "South Africa 2016", "Zambia 2010", "Zimbabwe 2012"]
+    },
+    {
+      "iso3": "ZWE",
+      "name": "Zimbabwe",
+      "file": "ZWE.json",
+      "n_persons": 95386,
+      "pop_num": 16665000,
+      "n_attrs": 9,
+      "avail_var": [
+        "Urban/rural",
+        "Home location",
+        "Age",
+        "Sex",
+        "Marital status",
+        "Children born",
+        "Race",
+        "Education",
+        "Employment"
+      ],
+      "ipums_samples": ["Vietnam 2019", "South Africa 2016", "Zambia 2010", "Zimbabwe 2012"]
+    }
+  ]
+}

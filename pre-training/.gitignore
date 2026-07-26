@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.egg-info/
+cache/
+*.dat
+*.dat.gz
+*.xml
+*.parquet
+state/*.tmp

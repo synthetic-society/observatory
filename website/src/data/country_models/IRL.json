@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:16:17+00:00",
+  "iso3": "IRL",
+  "name": "Ireland",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 4,
+    "ipums_samples": [
+      "Guinea 2014",
+      "Greece 2011",
+      "Guatemala 2002",
+      "Honduras 2013",
+      "Haiti 2003",
+      "Hungary 2011",
+      "Indonesia 2010",
+      "Ireland 2016",
+      "Israel 2008",
+      "India 2009-10 employment survey"
+    ],
+    "ipums_country_code": 372,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 99923
+  },
+  "avail_var": [
+    "Urban/rural",
+    "Home location",
+    "Age",
+    "Marital status",
+    "Children born",
+    "Religion",
+    "Education",
+    "Employment"
+  ],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.6511213634498564, 0.3488786365501436],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.30237282707684915, 0.23838355533760996, 0.17376379812455592, 0.14306015632036667, 0.0851956006124716,
+        0.05722406252814667
+      ],
+      "uniqVals": ["Dublin", "Midlands", "Mid-East, Border", "Mid-West, South-East", "West", "South West"]
+    },
+    "Age": {
+      "probs": [
+        0.15190696836564155, 0.14990542717892777, 0.13250202656045154, 0.11723026730582549, 0.11527876464877956,
+        0.10238883940634289, 0.08293385907148504, 0.06792230017113177, 0.050759084495061196, 0.011839116119411948,
+        0.011689000530408415, 0.003872982196291144, 0.0009407243577554717, 0.0005304084144791489, 0.00030023117800706545
+      ],
+      "uniqVals": [17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82, 85]
+    },
+    "Marital status": {
+      "probs": [0.49484102759124526, 0.4093051649770323, 0.07717942815968296, 0.01867437927203947],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.380042632827277, 0.23450056543538525, 0.1523973459563864, 0.14532189786135324, 0.05768441700109084,
+        0.018204017093161735, 0.006935340211963212, 0.0027220960139307266, 0.0012409555357625372, 0.0009507320636890405
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6", "7", "8", "9"]
+    },
+    "Religion": {
+      "probs": [0.7928705102929255, 0.11417791699608698, 0.09295157271098746],
+      "uniqVals": ["No religion", "Christian", "Other"]
+    },
+    "Education": {
+      "probs": [0.4349449075788357, 0.4278794671897361, 0.1371756252314282],
+      "uniqVals": ["Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.8813986769812756, 0.11860132301872442],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 5271000,
+  "corr": [
+    [
+      0.9999999999999991, 0.6726931983719112, 0.17975641321123004, 0.2275652196347659, 0.19506138068833853,
+      0.22385838000187816, 0.07447943525883441, 0.11347771253811058
+    ],
+    [
+      0.6726931983719112, 0.9999999999999999, 0.07833853374176729, 0.11684420472784793, 0.1566547676916645,
+      0.18756103445865982, 0.12698972840786557, 0.08652652635693339
+    ],
+    [
+      0.17975641321123004, 0.07833853374176729, 0.9999999999999992, 0.6406081933228155, 0.5964371375601465,
+      0.1593113274162387, 0.3519764012762619, 0.2229885683404021
+    ],
+    [
+      0.2275652196347659, 0.11684420472784793, 0.6406081933228155, 0.9999999999999991, 0.6973363085306772,
+      0.19130911651329402, 0.1834248786111905, 0.19787650729788683
+    ],
+    [
+      0.19506138068833853, 0.1566547676916645, 0.5964371375601465, 0.6973363085306772, 0.9999999999999983,
+      0.22630765867854113, 0.28170776367190287, 0.13429259894993179
+    ],
+    [
+      0.22385838000187816, 0.18756103445865982, 0.1593113274162387, 0.19130911651329402, 0.22630765867854113,
+      0.9999999999999991, 0.2190246535419731, 0.13288029115198852
+    ],
+    [
+      0.07447943525883441, 0.12698972840786557, 0.3519764012762619, 0.1834248786111905, 0.28170776367190287,
+      0.2190246535419731, 0.9999999999999961, 0.4073415051779365
+    ],
+    [
+      0.11347771253811058, 0.08652652635693339, 0.2229885683404021, 0.19787650729788683, 0.13429259894993179,
+      0.13288029115198852, 0.4073415051779365, 1.000000000000002
+    ]
+  ]
+}

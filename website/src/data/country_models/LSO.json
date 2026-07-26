@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:16:50+00:00",
+  "iso3": "LSO",
+  "name": "Lesotho",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 6,
+    "ipums_samples": [
+      "Saint Lucia 1991",
+      "Liberia 2008",
+      "Lesotho 2006",
+      "Morocco 2014",
+      "Mali 2009",
+      "Myanmar 2014",
+      "Mongolia 2020",
+      "Mauritius 2011",
+      "Malawi 2018",
+      "Mexico 2020 Q3 LFS"
+    ],
+    "ipums_country_code": 426,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 16267
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.5640868014999693, 0.43591319850003074],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.3351570664535563, 0.1444027786315854, 0.14071432962439295, 0.08483432716542694, 0.06565439232802607,
+        0.05698653716112375, 0.0483801561443413, 0.04635150919038544, 0.04204831868199422, 0.03547058461916764
+      ],
+      "uniqVals": [
+        "Butha Buthe",
+        "Leribe",
+        "Berea",
+        "Maseru",
+        "Mafeteng",
+        "Mohale's Hoek",
+        "Quthing",
+        "Qacha's Nek",
+        "Mokhotlong",
+        "Thaba-Tseka"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.04788836294338231, 0.04518350033810783, 0.04413843978606996, 0.04395401733571033, 0.04303190508391221,
+        0.04223274113235385, 0.03971230097743899, 0.03915903362636011, 0.03915903362636011, 0.03657711932132538,
+        0.0336263601155714, 0.032765722013893155, 0.03233540296305404, 0.0302452818589783, 0.029446117907419928,
+        0.027355996803344194, 0.02692567775250507, 0.026556832851785825, 0.025634720599987705, 0.02489703079854921,
+        0.024835556648429336, 0.02409786684699084, 0.023237228745312595, 0.0227454355443536, 0.022130694043154854,
+        0.021638900842195857, 0.021270055941476608, 0.02059384029015799, 0.01967172803835987, 0.018811089936681624,
+        0.01819634843548288, 0.017704555234523883, 0.014876744329009652, 0.010450605520378681, 0.004672035409110469,
+        0.0019056986537161124, 0.0015983279031167395, 0.0007376898014384951
+      ],
+      "uniqVals": [
+        12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+        40, 41, 42, 43, 44, 45, 46, 47, 48, 49
+      ]
+    },
+    "Marital status": {
+      "probs": [0.48687526894940675, 0.3310382983955247, 0.11280506546996988, 0.06928136718509867],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.27749431364111393, 0.23630663306079794, 0.18516014016106228, 0.12264092948914981, 0.07401487674432901,
+        0.046228560890145695, 0.028339583205262187, 0.014692321878650027, 0.008360484416302945, 0.004057293907911723,
+        0.001659802053236614, 0.001045060552037868
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+    },
+    "Education": {
+      "probs": [0.5650703879018872, 0.22733140714329625, 0.17772176799655745, 0.02987643695825905],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.9175631646892481, 0.08243683531075183],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 2311000,
+  "corr": [
+    [
+      1.0, 0.5641925521449892, 0.1326827998129689, 0.060591431040147095, 0.24312984759322936, 0.367576822405683,
+      0.07347591551541549
+    ],
+    [
+      0.5641925521449892, 0.9999999999999996, 0.08370445205946855, 0.125696336637031, 0.17247369533992263,
+      0.25422398524941003, 0.16966098274454006
+    ],
+    [
+      0.1326827998129689, 0.08370445205946855, 0.9999999999999991, 0.5628662705421446, 0.6655524937308863,
+      0.26001263744244457, 0.2859877636151678
+    ],
+    [
+      0.060591431040147095, 0.125696336637031, 0.5628662705421446, 0.9999999999999994, 0.6200348153719449,
+      0.1459760442865899, 0.1871028688621663
+    ],
+    [
+      0.24312984759322936, 0.17247369533992263, 0.6655524937308863, 0.6200348153719449, 1.0000000000000002,
+      0.2149485853253038, 0.17219529593864713
+    ],
+    [
+      0.367576822405683, 0.25422398524941003, 0.26001263744244457, 0.1459760442865899, 0.2149485853253038,
+      0.9999999999999994, 0.06205777570789328
+    ],
+    [
+      0.07347591551541549, 0.16966098274454006, 0.2859877636151678, 0.1871028688621663, 0.17219529593864713,
+      0.06205777570789328, 0.9999999999999996
+    ]
+  ]
+}

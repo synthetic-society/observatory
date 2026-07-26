@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+
+# build output and caches
+dist/
+.astro/
+.wrangler/
+.ruff_cache/
+.mypy_cache/
+__pycache__/
+*.egg-info/
+.venv/
+mvndst/.build/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.*
+
+# macOS-specific files
+.DS_Store
+
+# setting folder
+.idea/
+.vscode/

@@ -1,0 +1,48 @@
+[project]
+name = "observatory-pretraining"
+version = "0.1.0"
+description = "IPUMS-International pipeline: fetch, prepare, then fit one model per country."
+requires-python = ">=3.13"
+dependencies = [
+  "correctmatch @ git+https://github.com/imperial-aisp/pycorrectmatch.git@master",
+  "ipumspy>=0.8.2",
+  "numpy>=2.0",
+  "pandas>=2.2",
+  "pyarrow>=17",
+  "pycountry>=24.0",
+  "python-dotenv>=1.0",
+  "tyro>=0.9.35",
+]
+
+[project.scripts]
+build-geo-labels = "build_geo_labels:main"
+gen-reference = "gen_reference:main"
+ipums-fetch = "ipums_fetch:cli"
+ipums-prepare = "ipums_prepare:cli"
+train-model = "train_model:cli"
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+py-modules = [
+  "build_geo_labels",
+  "gen_reference",
+  "ipums_fetch",
+  "ipums_prepare",
+  "lib_ipums",
+  "train_model",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+ignore = [
+  "CPY",
+  "T201", # print statements
+]
+
+[tool.pyrefly]
+project-includes = ["**/*.py*"]

@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-27T07:32:36+00:00",
+  "iso3": "SVN",
+  "name": "Slovenia",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 9,
+    "ipums_samples": [
+      "Sudan 2008",
+      "Sweden 1910 (100%)",
+      "Slovenia 2002",
+      "Slovakia 2011",
+      "Sierra Leone 2015",
+      "Senegal 2013",
+      "Suriname 2012",
+      "South Sudan 2008",
+      "El Salvador 2007",
+      "Togo 2010"
+    ],
+    "ipums_country_code": 705,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 37884
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.5458240946045824, 0.4541759053954176],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.2557280118255728, 0.15431316650828847, 0.12448527082673425, 0.09951430683138, 0.0663340724316334,
+        0.059339034948791045, 0.054033365008974765, 0.05350543765177911, 0.0346848273677542, 0.030646183085207477,
+        0.02338718192376729, 0.022489705416534684, 0.021539436173582515
+      ],
+      "uniqVals": [
+        "Pomurska",
+        "Podravska",
+        "Koroška",
+        "Savinjska",
+        "Zasavska",
+        "Spodnjeposavska",
+        "Jugovzhodna Slovenija",
+        "Osrednjeslovenska",
+        "Gorenjska",
+        "Notranjsko-kraška",
+        "Goriška",
+        "Obalno-kraška",
+        "Unknown"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.1654260373772569, 0.16505648822721994, 0.15985640375884277, 0.14892830746489283, 0.1387393094710168,
+        0.1123165452433745, 0.07573117938971598, 0.019691690423397742, 0.009370710590222785, 0.0033259423503325942,
+        0.0011350438179706472, 0.0003167564143173899, 0.00010558547143912998
+      ],
+      "uniqVals": [17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77]
+    },
+    "Marital status": {
+      "probs": [0.6314011192059973, 0.2923661704149509, 0.05638264174849541, 0.019850068630556435],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.4398690740154155, 0.24060289304191743, 0.23120578608383485, 0.07876676169359097, 0.008816386865167353,
+        0.0006335128286347799, 0.00010558547143912998
+      ],
+      "uniqVals": ["No children", "1 child", "2 children", "3", "4", "5", "6"]
+    },
+    "Education": {
+      "probs": [0.6743480097138633, 0.17886178861788618, 0.12762643860204836, 0.01916376306620209],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.8603104212860311, 0.13968957871396895],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 2118000,
+  "corr": [
+    [
+      1.0000000000000002, 0.3507629722947022, 0.12536621093750044, 0.15534465017547694, 0.15696323687248304,
+      0.2229270958482478, 2.0983175045859655e-16
+    ],
+    [
+      0.3507629722947022, 0.9999999999999992, 0.12139421035681139, 0.1809761374323522, 0.18001558071403412,
+      0.20793000059315397, 0.17047191128587003
+    ],
+    [
+      0.12536621093750044, 0.12139421035681139, 0.9999999999999994, 0.6402349758231516, 0.6094952934406312,
+      0.3680358699963845, 0.34689867153011045
+    ],
+    [
+      0.15534465017547694, 0.1809761374323522, 0.6402349758231516, 1.0000000000000013, 0.7308495941838751,
+      0.22939526569098953, 0.14838209235127162
+    ],
+    [
+      0.15696323687248304, 0.18001558071403412, 0.6094952934406312, 0.7308495941838751, 1.0000000000000007,
+      0.31555868289788974, 0.1518865116014906
+    ],
+    [
+      0.2229270958482478, 0.20793000059315397, 0.3680358699963845, 0.22939526569098953, 0.31555868289788974,
+      0.9999999999999997, 0.31356929820788326
+    ],
+    [
+      2.0983175045859655e-16, 0.17047191128587003, 0.34689867153011045, 0.14838209235127162, 0.1518865116014906,
+      0.31356929820788326, 0.9999999999999987
+    ]
+  ]
+}

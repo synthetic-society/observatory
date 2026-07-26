@@ -1,0 +1,26 @@
+---
+const affiliations = [
+  { src: "/logos/logo-oxford.svg", alt: "University of Oxford", href: "https://www.ox.ac.uk/" },
+  { src: "/logos/logo-oxford-oii.svg", alt: "Oxford Internet Institute", href: "https://www.oii.ox.ac.uk/" },
+  {
+    src: "/logos/logo-cpg-icl.png",
+    alt: "Computational Privacy Group, Imperial College London",
+    href: "https://cpg.doc.ic.ac.uk/",
+  },
+];
+---
+
+<ul class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-14 gap-y-8 select-none">
+  {affiliations.map((affiliation) => (
+    <li>
+      <a href={affiliation.href} target="_blank" rel="noopener" class="block">
+        <img
+          src={affiliation.src}
+          alt={affiliation.alt}
+          draggable={false}
+          class="h-12 w-auto select-none object-contain"
+        />
+      </a>
+    </li>
+  ))}
+</ul>

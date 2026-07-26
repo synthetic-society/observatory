@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.1",
+  "generated_at": "2026-05-26T16:18:05+00:00",
+  "iso3": "RUS",
+  "name": "Russian Federation",
+  "source": {
+    "ipums_collection": "ipumsi",
+    "ipums_extract_id": 8,
+    "ipums_samples": [
+      "Philippines 2019 Q3 LFS",
+      "Pakistan 1998",
+      "Poland 2011",
+      "Puerto Rico 2020",
+      "Palestine 2017",
+      "Portugal 2011",
+      "Paraguay 2002",
+      "Romania 2011",
+      "Russia 2010",
+      "Rwanda 2012"
+    ],
+    "ipums_country_code": 643,
+    "ipums_citation": "Steven Ruggles, Lara Cleveland, Rodrigo Lovaton, Sula Sarkar, Matthew Sobek, Derek Burk, Dan Ehrlich, Jane Lee, and Nate Merrill. Integrated Public Use Microdata Series, International: Version 7.6 [dataset]. Minneapolis, MN: IPUMS, 2025. https://doi.org/10.18128/D020.V7.7\n\nResearchers should also acknowledge the statistical agency that originally produced the data.\n\n\nThe licensing agreement for use of IPUMS International data requires that users supply IPUMS International with the title and full citation for any publications, research reports, or educational materials making use of the data or documentation.\n\nCopies of such materials are also gratefully received at ipums@umn.edu.\n\nPrinted matter should be sent to:\nIPUMS International\nMinnesota Population Center\nUniversity of Minnesota\n50 Willey Hall\n225 19th Avenue South\nMinneapolis, MN 55455\n",
+    "n_persons": 1715933
+  },
+  "avail_var": ["Urban/rural", "Home location", "Age", "Marital status", "Children born", "Education", "Employment"],
+  "marginals": {
+    "Urban/rural": {
+      "probs": [0.7757610582697576, 0.2242389417302424],
+      "uniqVals": ["Rural", "Urban"]
+    },
+    "Home location": {
+      "probs": [
+        0.08046060073441096, 0.05306908836184163, 0.03398734099757974, 0.032572950109357415, 0.03159505645033926,
+        0.02884553184768869, 0.028601932592939236, 0.027224256424930343, 0.026184006018883023, 0.025450877161287765,
+        0.023288205308715434, 0.020838226201139554, 0.0202810948912341, 0.019029880537293705, 0.01875772538904491,
+        0.018435451733838093, 0.017261746233681617, 0.017237852526876048, 0.017009405378881345, 0.016582815296401432,
+        0.016503558122607353, 0.015353746329256445, 0.01355181117211453, 0.013450991384861763, 0.013393879597863086,
+        0.012605970046616038, 0.011610593187496248, 0.011562805773885111, 0.011495204066825453, 0.010424066673931908,
+        0.01028828048647587, 0.010287697713139149, 0.009953768591197908, 0.009737559683274347, 0.009612846189216012,
+        0.009334863307600005, 0.00900909301237286, 0.009007927465699419, 0.008996271998964994, 0.008924008105211568,
+        0.008713044157318496, 0.008318506608358252, 0.007785851778595085, 0.007574305057365293, 0.0075463319372026764,
+        0.007467074763408595, 0.0073866520429410705, 0.007291659989055517, 0.007280587295657814, 0.007247951988801428,
+        0.007147132201548662, 0.007042233000938848, 0.00699444558732771, 0.00694024766701264, 0.00677881945274087,
+        0.006467618490931756, 0.006316097423384247, 0.00614126542236789, 0.0060491872351659415, 0.005848130433997132,
+        0.005821905633844678, 0.005686119446388641, 0.005413381524803125, 0.005030499442577304, 0.0048416808814796385,
+        0.0048381842414593115, 0.004746688827594084, 0.004686663173911802, 0.0046120681868114894, 0.00435273405197056,
+        0.0038562111690841074, 0.0037693779419126503, 0.0030980230580098405, 0.002837523376495469,
+        0.0023998606006178564, 0.002075838625400875, 0.0019517079046792619, 0.001881192330935998, 0.0013456236344892255,
+        0.0013153194209797236, 0.0012832668874600583
+      ],
+      "uniqVals": [
+        "Altai Krai",
+        "Krasnodar Krai",
+        "Krasnoyarsk Krai",
+        "Primorsky Krai",
+        "Stavropol Krai",
+        "Khabarovsk Krai",
+        "Amur Oblast",
+        "Arkhangelsk Oblast",
+        "Astrakhan Oblast",
+        "Belgorod Oblast",
+        "Bryansk Oblast",
+        "Vladimir Oblast",
+        "Volgograd Oblast",
+        "Vologda Oblast",
+        "Voronezh Oblast",
+        "Nizhny Novgorod Oblast",
+        "Ivanovo Oblast",
+        "Irkutsk Oblast",
+        "Republic of Ingushetia",
+        "Kaliningrad Oblast",
+        "Tver Oblast",
+        "Kaluga Oblast",
+        "Kamchatka Krai",
+        "Kemerovo Oblast",
+        "Kirov Oblast",
+        "Kostroma Oblast",
+        "Samara Oblast",
+        "Kurgan Oblast",
+        "Kursk Oblast",
+        "City of Federal Importance St. Petersburg",
+        "Leningrad Oblast",
+        "Lipetsk Oblast",
+        "Magadan Oblast",
+        "City of Federal Importance Moscow",
+        "Moscow Oblast",
+        "Murmansk Oblast",
+        "Novgorod Oblast",
+        "Novosibirsk Oblast",
+        "Omsk Oblast",
+        "Orenburg Oblast",
+        "Oryol Oblast",
+        "Penza Oblast",
+        "Perm Krai",
+        "Pskov Oblast",
+        "Rostov Oblast",
+        "Ryazan Oblast",
+        "Saratov Oblast",
+        "Sakhalin Oblast",
+        "Sverdlovsk Oblast",
+        "Smolensk Oblast",
+        "Tambov Oblast",
+        "Tomsk Oblast",
+        "Tula Oblast",
+        "Tyumen Oblast",
+        "Khanty-Mansi Autonomous District - Yugra",
+        "Ulyanovsk Oblast",
+        "Yamalo-Nenets Autonomous District",
+        "Chelyabinsk Oblast",
+        "Zabaykalsky Krai, Aginsky Buryat District",
+        "Yaroslavskaya Oblast",
+        "Republic of Adygea",
+        "Republic of Bashkortostan",
+        "Republic of Buryatia",
+        "Republic of Dagestan",
+        "Kabardino-Balkaria Republic",
+        "Altai Republic",
+        "Republic of Kalmykia",
+        "Republic of Karelia",
+        "Komi Republic",
+        "Mari El Republic",
+        "Republic of Mordovia",
+        "Republic of North Ossetia-Alania",
+        "Karachay-Cherkess Republic",
+        "Republic of Tatarstan",
+        "Tyva Republic",
+        "Udmurtia Republic",
+        "Republic of Khakassia",
+        "Chechen Republic",
+        "Chuvash Republic",
+        "Republic of Sakha (Yakutia)",
+        "Jewish Autonomous Region"
+      ]
+    },
+    "Age": {
+      "probs": [
+        0.030401536656734267, 0.029469099317980363, 0.02846206699212615, 0.028302969871201265, 0.027495828799842418,
+        0.027204442131481824, 0.025971293750979788, 0.025824434870126048, 0.025820355456769, 0.025626874708977565,
+        0.02554004148180611, 0.025530134335081847, 0.025474188094756614, 0.02539434814762581, 0.025209608999885193,
+        0.024916474011514436, 0.02468744409018301, 0.02465306046331646, 0.024612266329745974, 0.02453534024929878,
+        0.024493380569054854, 0.02443918264873978, 0.02441878558195454, 0.024354097741578488, 0.024264933421060148,
+        0.02413380942029788, 0.02392517656575169, 0.023804542485050408, 0.023112790534362354, 0.0227619609856562,
+        0.022569645784538208, 0.022436190690429056, 0.02235460242328809, 0.01909981333770025, 0.017285057167150467,
+        0.01636077865511066, 0.014504645577653673, 0.013661372559418112, 0.012620539380034069, 0.010794127742749862,
+        0.009997476591451997, 0.009148375839849225, 0.00826314314136974, 0.005727496353295845, 0.0056668879262768415,
+        0.005659894646236187, 0.0037921061020447767, 0.002201134892795931, 0.0018374843306819088, 0.0017838691837035595,
+        0.0016340964361662139, 0.001600295582636385, 0.0014598472084865785, 0.0014184703015793741,
+        0.0011037726997499319, 0.0010839584063014115, 0.0007261355775546015, 0.00036831274880779147
+      ],
+      "uniqVals": [
+        15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42,
+        43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+        71, 72
+      ]
+    },
+    "Marital status": {
+      "probs": [0.6087084985252921, 0.1657366575501491, 0.15445882793792065, 0.07109601598663817],
+      "uniqVals": ["Single/never married", "Married/in union", "Separated/divorced/spouse absent", "Widowed"]
+    },
+    "Children born": {
+      "probs": [
+        0.3593089007554491, 0.33677946633114464, 0.22050045077517597, 0.06439703648102811, 0.01242997249892624,
+        0.004015891063345713, 0.0012809357941131734, 0.0006177397369244603, 0.0003240219752169811,
+        0.00022087109461733063, 5.886010700884009e-5, 2.855589349933826e-5, 1.631765342819329e-5, 1.165546673442378e-5,
+        4.6621866937695116e-6, 4.6621866937695116e-6
+      ],
+      "uniqVals": [
+        "No children",
+        "1 child",
+        "2 children",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15"
+      ]
+    },
+    "Education": {
+      "probs": [0.615324141443751, 0.3393634833061664, 0.03978418737794541, 0.005528187872137199],
+      "uniqVals": ["Less than primary completed", "Primary completed", "Secondary completed", "University completed"]
+    },
+    "Employment": {
+      "probs": [0.9151423744400277, 0.08485762555997232],
+      "uniqVals": ["Employed", "Unemployed"]
+    }
+  },
+  "pop_num": 143826000,
+  "corr": [
+    [
+      1.0000000000000002, 0.4554435636468922, 0.09417173683847246, 0.11875460238502542, 0.28951274221071455,
+      0.3124279825160916, 0.23734385043224945
+    ],
+    [
+      0.4554435636468922, 1.0000000000000002, 0.07615765978717903, 0.00393676757812419, 0.23951244448017955,
+      0.20513083337059934, 0.34667272007797445
+    ],
+    [
+      0.09417173683847246, 0.07615765978717903, 1.0000000000000002, 0.609895691856545, 0.6205721611427313,
+      0.2890046880346591, 0.33463578205213196
+    ],
+    [
+      0.11875460238502542, 0.00393676757812419, 0.609895691856545, 1.0000000000000022, 0.6802959671823686,
+      0.11489371621116903, 0.2043798374835753
+    ],
+    [
+      0.28951274221071455, 0.23951244448017955, 0.6205721611427313, 0.6802959671823686, 1.000000000000001,
+      0.21102128905275314, 0.2504883110241314
+    ],
+    [
+      0.3124279825160916, 0.20513083337059934, 0.2890046880346591, 0.11489371621116903, 0.21102128905275314,
+      1.0000000000000002, 0.3012285777918459
+    ],
+    [
+      0.23734385043224945, 0.34667272007797445, 0.33463578205213196, 0.2043798374835753, 0.2504883110241314,
+      0.3012285777918459, 0.9999999999999988
+    ]
+  ]
+}

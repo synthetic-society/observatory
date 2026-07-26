@@ -1,0 +1,16 @@
+# Safe to cache forever since astro adds a content hash in these filenames
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_astro/*.wasm
+  Content-Type: application/wasm
+
+# Safe to cache as fonts rarely change
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Security headers for every response
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
