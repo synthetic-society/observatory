@@ -1,6 +1,6 @@
 import { signal } from "@preact/signals";
 import type { Ref } from "preact";
-import { useEffect, useRef } from "preact/hooks";
+import { useEffect, useRef, useState } from "preact/hooks";
 import { availableCountries, DEFAULT_COUNTRY } from "../data/loadModel";
 import { answerDisplay, isAnswered, isValidDob } from "../data/quiz";
 import {
@@ -11,14 +11,15 @@ import {
   crowdRemaining,
   currentIndex,
   editCountry,
+  goToStep,
   quizError,
   quiz as quizSignal,
   setAnswer,
-  submitAnswers,
 } from "../lib/store";
 import DotField from "./DotField";
 import Button from "./ui/Button";
 
+const CROWD_SETTLE_MS = 200;
 const fmt = (n: number) => n.toLocaleString("en-US");
 const onlyDigits = (s: string, max: number) => s.replace(/\D/g, "").slice(0, max);
 
@@ -41,21 +42,39 @@ function ProgressBar({ total, index }: { total: number; index: number }) {
       aria-valuemax={total}
     >
       {Array.from({ length: total }, (_, i) => (
-        <div class={`h-1.5 rounded-full ${i === index ? "bg-accent-ink" : i < index ? "bg-ink" : "bg-ink/15"}`} />
+        <div
+          // biome-ignore lint/suspicious/noArrayIndexKey: a segment is nothing but its position
+          key={i}
+          class={`h-1.5 rounded-full ${i === index ? "bg-accent-ink" : i < index ? "bg-ink" : "bg-ink/15"}`}
+        />
       ))}
     </div>
   );
 }
 
+// Redrawing the dot field on every keystroke is wasted work, so let the crowd settle first.
+function CrowdField({ crowd }: { crowd: number }) {
+  const [settled, setSettled] = useState(crowd);
+  useEffect(() => {
+    const timer = setTimeout(() => setSettled(crowd), CROWD_SETTLE_MS);
+    return () => clearTimeout(timer);
+  }, [crowd]);
+  return <DotField variant="black" crowd={settled} />;
+}
+
 export default function Quiz() {
   const quiz = quizSignal.value;
   const heading = useRef<HTMLHeadingElement>(null);
+  const [blocked, setBlocked] = useState(false);
   const stepKey = `${countryChosen.value}:${currentIndex.value}`;
   const shownStep = useRef(stepKey);
 
   // Each step replaces the previous one in place, so move focus to announce it.
   useEffect(() => {
-    if (shownStep.current !== stepKey) heading.current?.focus();
+    if (shownStep.current !== stepKey) {
+      heading.current?.focus();
+      setBlocked(false);
+    }
     shownStep.current = stepKey;
   }, [stepKey]);
 
@@ -103,20 +122,17 @@ export default function Quiz() {
     .filter((question) => isAnswered(question, answers.value[question.id]));
 
   const next = () => {
+    if (!canContinue) {
+      setBlocked(true);
+      return;
+    }
     if (index === total - 1) {
-      submitAnswers();
       location.assign(`/result?country=${quiz.iso3}`);
       return;
     }
-    currentIndex.value = index + 1;
+    goToStep(index + 1);
   };
-  const prev = () => {
-    if (index === 0) {
-      editCountry();
-      return;
-    }
-    currentIndex.value = index - 1;
-  };
+  const prev = () => (index === 0 ? editCountry() : goToStep(index - 1));
 
   return (
     <div class="mx-auto max-w-7xl px-6 py-4">
@@ -132,7 +148,7 @@ export default function Quiz() {
           </div>
 
           <div class="mt-6 overflow-hidden">
-            <DotField variant="black" crowd={crowd} />
+            <CrowdField crowd={crowd} />
           </div>
 
           <div class="mt-5 flex flex-wrap gap-2">
@@ -157,16 +173,27 @@ export default function Quiz() {
           </h1>
           {step.blurb && <p class="mt-4 max-w-md text-ink/75 text-sm">{step.blurb}</p>}
 
-          {step.kind === "dob" ? <DobInputs /> : <SingleSelect stepId={step.id} />}
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              next();
+            }}
+          >
+            {step.kind === "dob" ? <DobInputs blocked={blocked} /> : <SingleSelect stepId={step.id} />}
 
-          <div class="mt-8 flex items-center justify-between">
-            <Button variant="text" type="button" onClick={prev}>
-              {index === 0 ? "← Change country" : "← Previous"}
-            </Button>
-            <Button type="button" onClick={next} disabled={!canContinue}>
-              {index === total - 1 ? "See result" : "Continue"} →
-            </Button>
-          </div>
+            {blocked && !canContinue && step.kind !== "dob" && (
+              <p role="alert" class="mt-3 text-ink text-sm">
+                Choose an answer to continue.
+              </p>
+            )}
+
+            <div class="mt-8 flex items-center justify-between">
+              <Button variant="text" type="button" onClick={prev}>
+                {index === 0 ? "← Change country" : "← Previous"}
+              </Button>
+              <Button type="submit">{index === total - 1 ? "See result" : "Continue"} →</Button>
+            </div>
+          </form>
         </section>
       </div>
     </div>
@@ -190,7 +217,12 @@ function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
         </p>
       </section>
 
-      <section>
+      <form
+        onSubmit={(event) => {
+          event.preventDefault();
+          start();
+        }}
+      >
         <label for="country" class="text-ink/70 text-sm">
           Country of residence
         </label>
@@ -214,11 +246,9 @@ function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
         </p>
 
         <div class="mt-8 flex justify-end">
-          <Button type="button" onClick={start}>
-            Continue →
-          </Button>
+          <Button type="submit">Continue →</Button>
         </div>
-      </section>
+      </form>
     </div>
   );
 }
@@ -252,7 +282,7 @@ function SingleSelect({ stepId }: { stepId: string }) {
   );
 }
 
-function DobInputs() {
+function DobInputs({ blocked }: { blocked: boolean }) {
   const inputClass =
     "block border border-ink bg-transparent px-3 py-2 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2";
   const fields = [
@@ -261,7 +291,7 @@ function DobInputs() {
     { id: "dob_year", label: "Year", autocomplete: "bday-year", maxLength: 4, width: "w-24" },
   ] as const;
   const complete = answers.value.dob_day && answers.value.dob_month && answers.value.dob_year?.length === 4;
-  const invalid = !!complete && !isValidDob(answers.value);
+  const invalid = (!!complete || blocked) && !isValidDob(answers.value);
 
   return (
     <fieldset class="mt-6">
@@ -290,7 +320,7 @@ function DobInputs() {
       </div>
       {invalid && (
         <p id="dob-error" role="alert" class="mt-3 text-ink text-sm">
-          That date doesn’t exist. Use a real day and month, and a year between 1900 and today.
+          Enter a real date of birth: a day, a month, and a year between 1900 and today.
         </p>
       )}
     </fieldset>

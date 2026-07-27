@@ -7,7 +7,7 @@ interface Props {
 const { title = "Observatory of Anonymity" } = Astro.props;
 const path = Astro.url.pathname;
 const nav = [
-  { href: "/quiz", label: "The test" },
+  { href: "/quiz", label: "The quiz" },
   { href: "/research", label: "The research" },
   { href: "/about", label: "About us" },
 ];
@@ -49,10 +49,8 @@ const nav = [
               href={item.href}
               aria-current={path === item.href ? "page" : undefined}
               class:list={[
-                "transition",
-                path === item.href
-                  ? "underline underline-offset-4"
-                  : "text-ink hover:underline underline-offset-4",
+                "underline-offset-4 transition",
+                path === item.href ? "font-semibold underline" : "hover:underline",
               ]}
             >
               {item.label}
@@ -83,9 +81,7 @@ const nav = [
                 aria-current={path === item.href ? "page" : undefined}
                 class:list={[
                   "block px-6 py-4 transition",
-                  path === item.href
-                    ? "underline underline-offset-4"
-                    : "text-ink hover:bg-ink/5",
+                  path === item.href ? "font-semibold underline underline-offset-4" : "hover:bg-ink/5",
                 ]}
               >
                 {item.label}
@@ -103,9 +99,15 @@ const nav = [
       const eye = document.getElementById("eye");
       const pupil = document.getElementById("eye-pupil");
       if (eye && pupil) {
+        // Measuring on every pointer move would force a layout each time.
+        let box = eye.getBoundingClientRect();
+        const remeasure = () => {
+          box = eye.getBoundingClientRect();
+        };
+        window.addEventListener("resize", remeasure);
+        window.addEventListener("scroll", remeasure, { passive: true });
         window.addEventListener("pointermove", (event) => {
           if (reduceMotion.matches) return;
-          const box = eye.getBoundingClientRect();
           const dx = event.clientX - (box.left + box.width / 2);
           const dy = event.clientY - (box.top + box.height / 2);
           const distance = Math.hypot(dx, dy) || 1;
@@ -138,16 +140,10 @@ const nav = [
         if (isOpen() && !menu?.contains(target) && !btn?.contains(target)) setOpen(false);
       });
 
-      // Kept out of the markup so address harvesters have nothing to scrape.
-      const email = document.getElementById("contact-email");
-      if (email) {
-        const address = `${email.dataset.user}@${email.dataset.host}`;
-        email.outerHTML = `<a class="whitespace-nowrap underline" href="mailto:${address}">${address}</a>`;
-      }
     </script>
     <noscript>
       <p class="mx-auto max-w-7xl px-6 py-4 text-ink">
-        The anonymity test needs JavaScript. Nothing is sent to a server, the whole computation runs in your browser.
+        The anonymity quiz needs JavaScript. Nothing is sent to a server, the whole computation runs in your browser.
       </p>
     </noscript>
     <main><slot /></main>

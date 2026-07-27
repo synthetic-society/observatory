@@ -8,7 +8,11 @@ import Button from "./ui/Button";
 const DRAWS = 30;
 const SEED = 42;
 const fmt = (n: number) => n.toLocaleString("en-US");
-const pct = (value: number) => (value >= 0.1 ? (value * 100).toFixed(1) : value > 0 ? (value * 100).toFixed(2) : "0");
+const pct = (value: number) => {
+  if (value >= 0.1) return (value * 100).toFixed(1);
+  if (value >= 0.0001) return (value * 100).toFixed(2);
+  return value > 0 ? "<0.01" : "0";
+};
 
 const computeFor = (
   client: UniquenessClient,
@@ -18,13 +22,14 @@ const computeFor = (
 ) => client.compute(answerIndices(quiz, answers, enabled), shareScales(quiz, answers, enabled), DRAWS, SEED);
 
 export default function ResultBreakdown() {
-  const [phase, setPhase] = useState<"init" | "loading" | "ready" | "error">("init");
+  const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [baseline, setBaseline] = useState(0);
   const [current, setCurrent] = useState(0);
   // Uniqueness with one attribute left out, keyed by question id.
   const [uniquenessWithout, setUniquenessWithout] = useState<Record<string, number>>({});
   const [enabled, setEnabled] = useState<Record<string, boolean>>({});
   const [recomputing, setRecomputing] = useState(false);
+  const [toggleFailed, setToggleFailed] = useState(false);
   const client = useRef<UniquenessClient | null>(null);
   const latestToggle = useRef(0);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -42,7 +47,6 @@ export default function ResultBreakdown() {
     }
 
     answersSignal.value = storedAnswers;
-    setPhase("loading");
     const worker = createUniquenessClient();
     client.current = worker;
     let cancelled = false;
@@ -67,8 +71,8 @@ export default function ResultBreakdown() {
           [id]: false,
         });
         if (cancelled) return;
-        setUniquenessWithout({ ...without });
       }
+      setUniquenessWithout(without);
     };
 
     run().catch(() => {
@@ -82,8 +86,6 @@ export default function ResultBreakdown() {
     };
   }, []);
 
-  if (phase === "init") return null;
-
   const quiz = quizSignal.value;
   if (!quiz) {
     return (
@@ -93,7 +95,7 @@ export default function ResultBreakdown() {
         </h1>
         {phase === "error" && (
           <Button variant="outline" type="button" onClick={() => location.assign("/quiz")} class="mt-6">
-            Retake the test
+            Retake the quiz
           </Button>
         )}
       </div>
@@ -112,12 +114,12 @@ export default function ResultBreakdown() {
         </h1>
         <p class="mt-3 text-ink/70 text-sm">
           {phase === "error"
-            ? "Please retake the test and try again."
+            ? "Please retake the quiz and try again."
             : `Loading the ${quiz.countryName} copula model.`}
         </p>
         {phase === "error" && (
           <Button variant="outline" type="button" onClick={retake} class="mt-6">
-            Retake the test
+            Retake the quiz
           </Button>
         )}
       </div>
@@ -127,6 +129,7 @@ export default function ResultBreakdown() {
   const toggle = (questionId: string) => {
     const worker = client.current;
     if (!worker) return;
+    const previous = enabled;
     const next = { ...enabled, [questionId]: !enabled[questionId] };
     const token = ++latestToggle.current;
     setEnabled(next);
@@ -136,9 +139,13 @@ export default function ResultBreakdown() {
         if (token !== latestToggle.current) return;
         setCurrent(value);
         setRecomputing(false);
+        setToggleFailed(false);
       })
       .catch(() => {
-        if (token === latestToggle.current && client.current) setPhase("error");
+        if (token !== latestToggle.current || !client.current) return;
+        setEnabled(previous);
+        setRecomputing(false);
+        setToggleFailed(true);
       });
   };
 
@@ -190,32 +197,40 @@ export default function ResultBreakdown() {
           {total} everyday {total === 1 ? "answer" : "answers"}.
         </p>
         <Button variant="outline" type="button" onClick={retake}>
-          Retake the test
+          Retake the quiz
         </Button>
       </div>
 
       <div class="mt-20">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
           <h2 class="font-semibold text-2xl text-ink">What made you findable</h2>
-          <p class="text-ink/75 text-lg" role="status" aria-busy={recomputing}>
-            {someOff ? (
-              <>
-                With only {onCount} {onCount === 1 ? "attribute" : "attributes"}, you would have been{" "}
-                <span class="font-serif text-accent-ink italic">{currentPct}%</span> identifiable.
-              </>
-            ) : (
-              "Toggle an attribute off to see how much less identifiable you'd be."
+          <div>
+            <p class="text-ink/75 text-lg" role="status" aria-busy={recomputing}>
+              {someOff ? (
+                <>
+                  With only {onCount} {onCount === 1 ? "attribute" : "attributes"}, you would have been{" "}
+                  <span class="font-serif text-accent-ink italic">{currentPct}%</span> identifiable.
+                </>
+              ) : (
+                "Toggle an attribute off to see how much less identifiable you'd be."
+              )}
+            </p>
+            {toggleFailed && (
+              <p role="alert" class="mt-1 text-ink text-sm">
+                That change didn’t go through. Try toggling it again.
+              </p>
             )}
-          </p>
+          </div>
         </div>
 
         <ul class="divide-y divide-ink/10 border-ink/10 border-y">
+          {/* Narrow screens stack each attribute over three grid rows; md places everything on one. */}
           {rows.map((row) => {
             const barWidth = row.contribution != null ? (row.contribution / maxContribution) * 100 : 0;
             return (
               <li
                 key={row.questionId}
-                class={`grid grid-cols-[24px_minmax(0,1fr)_auto] items-center gap-4 py-2.5 md:grid-cols-[24px_140px_200px_1fr_140px_200px] ${
+                class={`grid grid-cols-[24px_minmax(0,1fr)_auto] items-center gap-x-4 gap-y-0.5 py-3 md:grid-cols-[24px_140px_200px_1fr_140px_200px] md:gap-y-0 md:py-2.5 ${
                   row.on ? "text-ink" : "text-ink/70"
                 }`}
               >
@@ -224,14 +239,19 @@ export default function ResultBreakdown() {
                   type="checkbox"
                   checked={row.on}
                   onChange={() => toggle(row.questionId)}
-                  class="h-4 w-4 accent-ink"
+                  class="col-start-1 row-start-1 h-4 w-4 accent-ink md:col-start-auto md:row-start-auto"
                 />
-                <label for={`include-${row.questionId}`} class="font-semibold">
+                <label
+                  for={`include-${row.questionId}`}
+                  class="col-start-2 row-start-1 font-semibold md:col-start-auto md:row-start-auto"
+                >
                   {row.label}
                 </label>
-                <span class="hidden truncate text-ink/70 md:inline">{row.value}</span>
+                <span class="col-start-2 row-start-2 truncate text-ink/70 text-sm md:col-start-auto md:row-start-auto md:text-base">
+                  {row.value}
+                </span>
                 <div
-                  class="hidden items-center gap-3 md:flex"
+                  class="col-span-2 col-start-2 row-start-3 mt-1 flex items-center gap-3 md:col-span-1 md:col-start-auto md:row-start-auto md:mt-0"
                   role="img"
                   aria-label={
                     row.contribution == null
@@ -246,10 +266,12 @@ export default function ResultBreakdown() {
                     />
                   </div>
                 </div>
-                <span class="text-right text-ink/70 tabular-nums">
+                <span class="col-start-3 row-start-1 text-right text-ink/70 tabular-nums md:col-start-auto md:row-start-auto">
                   {row.on && `${row.remaining < 10 ? "±" : ""}${fmt(row.remaining)} left`}
                 </span>
-                <span class="hidden text-right tabular-nums md:inline">{row.on && `1 in ${fmt(row.oneIn)}`}</span>
+                <span class="col-start-3 row-start-2 text-right text-sm tabular-nums md:col-start-auto md:row-start-auto md:text-base">
+                  {row.on && `1 in ${fmt(row.oneIn)}`}
+                </span>
               </li>
             );
           })}

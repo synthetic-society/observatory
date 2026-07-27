@@ -10,7 +10,7 @@ const affiliations = [
 ];
 ---
 
-<ul class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-14 gap-y-8 select-none">
+<ul class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-x-14 gap-y-8">
   {affiliations.map((affiliation) => (
     <li>
       <a href={affiliation.href} target="_blank" rel="noopener noreferrer" class="block">
@@ -18,7 +18,7 @@ const affiliations = [
           src={affiliation.src}
           alt={`${affiliation.alt} (opens in a new tab)`}
           draggable={false}
-          class="h-12 w-auto select-none object-contain"
+          class="h-12 w-auto object-contain"
         />
       </a>
     </li>

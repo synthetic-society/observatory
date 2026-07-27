@@ -1,6 +1,6 @@
 ---
 const recordTop: Array<[string, string]> = [
-  ["ID", "54b8617e"],
+  ["ID", "n°1343"],
   ["Date of birth", "1955-01-01"],
   ["ZIP Code", "02139"],
   ["Gender", "M"],
@@ -28,7 +28,7 @@ const recordBottom: Array<[string, string]> = [
       <dt class="text-ink/40">…</dt>
       <dd class="text-ink/40">…</dd>
       {recordBottom.map(([field, value], i) => (
-        <Fragment key={field}>
+        <Fragment>
           <dt class:list={["font-semibold", i === 0 && "pt-3"]}>{field}</dt>
           <dd class:list={["tabular-nums", i === 0 && "pt-3"]}>{value}</dd>
         </Fragment>

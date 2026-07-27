@@ -252,12 +252,12 @@ export default function PortraitRotator() {
 
   return (
     <div class="relative">
-      <div class="absolute top-5 left-6 z-10">
+      <div class="absolute top-5 left-6 z-10 rounded-md bg-bg/90 px-3 py-2">
         <p class="text-ink/70 text-sm">Population of the United Kingdom</p>
         <p class="font-medium font-serif text-3xl text-ink">{fmt(POPULATION)}</p>
       </div>
 
-      <div class="absolute right-6 bottom-5 z-10 max-w-sm text-right">
+      <div class="absolute right-6 bottom-5 left-6 z-10 ml-auto max-w-sm rounded-md bg-bg/90 px-3 py-2 text-right">
         <p class={`text-balance text-base text-ink/85 leading-snug ${fadeClass}`} style={fadeStyle}>
           {portrait.sentence}
         </p>

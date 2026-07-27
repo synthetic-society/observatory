@@ -5,37 +5,11 @@ title: "The research — Observatory of Anonymity"
 import RecordCard from "../../components/research/RecordCard.astro";
 import SamplingField from "../../components/research/SamplingField.astro";
 
+
 <header class="mx-auto max-w-3xl">
-  <h1 class="mt-3 font-sans text-5xl font-semibold leading-[1.05] text-ink text-balance">
-    De-identification and <span class="font-serif italic text-accent-ink">re-identification</span>
-  </h1>
-  <p class="mt-6 text-xl leading-relaxed text-ink/80 text-balance">
-    Three months ago, you noticed that <i>ACME Health</i> was cheaper than other insurances and
-    signed up. Reading their privacy policy, you discover
-    <a
-      class="underline"
-      href="https://www.theguardian.com/technology/2017/jan/10/medical-data-multibillion-dollar-business-report-warns"
-    >
-      they sell your data to third parties
-    </a>
-    . The policy says this data "might include" demographics along with financial and health
-    information. Jack from customer service reassures you: the data is "<i>anonymous</i>" (also
-    called
-    <a class="underline" href="https://en.wikipedia.org/wiki/De-identification">
-      <i>de-identified</i>
-    </a>
-    or
-    <a
-      class="underline"
-      href="https://www.wsj.com/articles/you-give-apps-sensitive-personal-information-then-they-tell-facebook-11550851636"
-    >
-      <i>depersonalized</i>
-    </a>
-    ), and only a small sample of their data is ever shared.
-  </p>
-  <p class="mt-4 text-xl leading-relaxed text-ink/80 text-balance">
-    Is it really anonymous? And could a few pieces of information be enough to pick you out?
-  </p>
+  <h1 class="mt-3 font-sans text-5xl font-semibold leading-[1.05] text-ink text-balance">De-identification and <span class="font-serif italic text-accent-ink">re-identification</span></h1>
+  <p class="mt-6 text-xl leading-relaxed text-ink/80 text-balance">Three months ago, you noticed that <i>ACME Health</i> was cheaper than other insurances and signed up. Reading their privacy policy, you discover <a class="underline" href="https://www.theguardian.com/technology/2017/jan/10/medical-data-multibillion-dollar-business-report-warns">they sell your data to third parties</a>. The policy says this data "might include" demographics along with financial and health information. Jack from customer service reassures you: the data is "<i>anonymous</i>" (also called <a class="underline" href="https://en.wikipedia.org/wiki/De-identification"><i>de-identified</i></a> or <a class="underline" href="https://www.wsj.com/articles/you-give-apps-sensitive-personal-information-then-they-tell-facebook-11550851636"><i>depersonalized</i></a>), and only a small sample of their data is ever shared.</p>
+  <p class="mt-4 text-xl leading-relaxed text-ink/80 text-balance">Is it really anonymous? And could a few pieces of information be enough to pick you out?</p>
 </header>
 
 <section class="mt-20 grid grid-cols-1 gap-10 md:grid-cols-[380px_1fr] md:items-start">
@@ -59,7 +33,7 @@ Companies sometimes _sample_ their data before release, by sharing say a few tho
 
 <SamplingField />
 
-**In theory, yes.** Each dot is one person. A few share your basic demographics (in red), most do not. If someone gets a small sample of ACME Health's customers and finds a record matching your demographics, how can they be sure it is yours, and not another red dot?
+**In theory, yes.** Each dot is one person. A few share your basic demographics (circled), most do not. If someone gets a small sample of ACME Health's customers and finds a record matching your demographics, how can they be sure it is yours, and not another circled dot?
 
 Sampling is one of the standard tools of releasing "anonymous" data. The Australian Information Commissioner's [De-identification guide](https://www.oaic.gov.au/agencies-and-organisations/guides/de-identification-and-the-privacy-act) states that sampling "_creates uncertainty that any particular person is even included in the dataset._" The problem? It doesn't work.
 

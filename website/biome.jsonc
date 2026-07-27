@@ -39,6 +39,11 @@
       "includes": ["**/*.jsonc"],
       "json": { "formatter": { "trailingCommas": "all" } },
     },
+    {
+      // No need for JSX keys as Astro templates render once for a static site
+      "includes": ["**/*.astro"],
+      "linter": { "rules": { "correctness": { "useJsxKeyInIterable": "off" } } },
+    },
   ],
   "html": { "experimentalFullSupportEnabled": true },
 }
