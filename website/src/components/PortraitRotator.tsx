@@ -1,27 +1,17 @@
 import { useEffect, useState } from "preact/hooks";
 import GBR from "../data/country_models/GBR.json";
+import { ageShare } from "../data/quiz";
+import type { CountryModel } from "../model/copula";
 import DotField from "./DotField";
 
 const POPULATION = GBR.pop_num ?? 67_330_000;
 const CURRENT_YEAR = new Date().getFullYear();
-const SHARES = GBR.marginals as Record<string, { probs: number[]; uniqVals: (string | number)[] }>;
+const MODEL = GBR as unknown as CountryModel;
 
 const shareOfValue = (attr: string, value: string | number): number => {
-  const attrShares = SHARES[attr];
-  const i = attrShares ? attrShares.uniqVals.indexOf(value) : -1;
-  return i >= 0 ? attrShares.probs[i] : 0;
-};
-
-// The model stores a handful of ages ([17,22,27,37,52,62,67,72] for the UK), so
-// use the share for whichever of them is closest to this person's age.
-const ageShareForYear = (year: number): number => {
-  const ages = SHARES.Age.uniqVals as number[];
-  const age = CURRENT_YEAR - year;
-  let closest = 0;
-  ages.forEach((value, i) => {
-    if (Math.abs(value - age) < Math.abs(ages[closest] - age)) closest = i;
-  });
-  return SHARES.Age.probs[closest];
+  const marginal = MODEL.marginals[attr];
+  const i = marginal ? marginal.uniqVals.indexOf(value) : -1;
+  return i >= 0 ? marginal.probs[i] : 0;
 };
 
 type Person = {
@@ -202,7 +192,7 @@ const crowdFor = (person: Person): number => {
     const value = person[key];
     if (value) share *= shareOfValue(attribute, value);
   }
-  if (person.bornYear) share *= ageShareForYear(person.bornYear);
+  if (person.bornYear) share *= ageShare(MODEL, CURRENT_YEAR - person.bornYear);
   return Math.max(1, Math.round(POPULATION * share));
 };
 

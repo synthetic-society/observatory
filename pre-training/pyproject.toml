@@ -46,3 +46,8 @@ ignore = [
 
 [tool.pyrefly]
 project-includes = ["**/*.py*"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]

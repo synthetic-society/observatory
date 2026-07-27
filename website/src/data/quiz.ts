@@ -117,7 +117,6 @@ const SKIPPED_ATTRS = new Set(["Urban/rural"]); // In the models but never asked
 // to 100: the UK has [17,22,27,…], others list every year in a range. Find the
 // closest age the model knows about and return where it sits in that list, which
 // is what both the share lookup and the model expect.
-// TODO: check if, by doing so, we do not underestimate the share of people with a given age (in, say, the UK), because the model's age distribution is coarser than the real one.
 const ageIndex = (model: CountryModel, age: number): number => {
   const ages = model.marginals[AGE_ATTR]?.uniqVals;
   if (!ages || ages.length === 0) return Number.NaN;
@@ -127,6 +126,21 @@ const ageIndex = (model: CountryModel, age: number): number => {
     0,
   );
 };
+
+// How many birth years one age entry stands for: a band midpoint covers half the
+// gap to each neighbour, an every-year listing gives 1.
+const ageSpanYears = (model: CountryModel, age: number): number => {
+  const ages = model.marginals[AGE_ATTR]?.uniqVals;
+  const index = ageIndex(model, age);
+  if (!ages || ages.length < 2 || Number.isNaN(index)) return 1;
+  const lo = Math.max(index - 1, 0);
+  const hi = Math.min(index + 1, ages.length - 1);
+  return (Number(ages[hi]) - Number(ages[lo])) / (hi - lo);
+};
+
+/** Share of the country born in one particular year, for someone of this age. */
+export const ageShare = (model: CountryModel, age: number): number =>
+  (model.marginals[AGE_ATTR]?.probs[ageIndex(model, age)] ?? 1) / ageSpanYears(model, age);
 
 const buildOptions = (attr: string, model: CountryModel, population: number): Option[] => {
   const marginal = model.marginals[attr];
@@ -228,10 +242,7 @@ const answeredAge = (answers: Record<string, string>): number => {
 export const computeShare = (quiz: Quiz, question: Question, answers: Record<string, string>): number => {
   const answer = answers[question.id];
   if (!isAnswered(question, answer)) return 1;
-  if (question.kind === "dob_year") {
-    const ages = quiz.model.marginals[AGE_ATTR];
-    return ages?.probs[ageIndex(quiz.model, answeredAge(answers))] ?? 1;
-  }
+  if (question.kind === "dob_year") return ageShare(quiz.model, answeredAge(answers));
   if (question.kind === "dob_month") return 1 / 12;
   if (question.kind === "dob_day") {
     const month = readNum(answers.dob_month);
@@ -286,7 +297,8 @@ export const shareScales = (quiz: Quiz, answers: Record<string, string>, enabled
     const year = readNum(answers.dob_year);
     const month = readNum(answers.dob_month);
     const day = readNum(answers.dob_day);
-    let scale = 1;
+    if (!validYear(year)) return 1;
+    let scale = 1 / ageSpanYears(quiz.model, answeredAge(answers));
     if (enabled.dob_month !== false && validMonth(month)) scale /= 12;
     if (enabled.dob_day !== false && validDay(year, month, day)) {
       scale /= daysInMonth(year, validMonth(month) ? month : 1);

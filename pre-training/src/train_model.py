@@ -59,14 +59,10 @@ def remap_to_contiguous(col: pd.Series) -> tuple[np.ndarray, list[int]]:
     return col.astype(int).map(lut).to_numpy(dtype=np.int64), uniq
 
 
-def extract_sigma_and_probs(G: Any, n_cols: int) -> tuple[np.ndarray, list[np.ndarray]]:
-    """Read the correlation matrix and the answer frequencies out of the fitted Julia model."""
-    from juliacall import Main as jl
-
-    sigma = np.array(jl.getproperty(G, jl.Symbol("Σ")))
-    marginals_jl = jl.getproperty(G, jl.Symbol("marginals"))
-    probs = [np.array(jl.getproperty(marginals_jl[i], jl.Symbol("p"))) for i in range(n_cols)]
-    return sigma, probs
+def marginal_probs(col: pd.Series, sorted_codes: list[int]) -> np.ndarray:
+    """Share of rows holding each code: CorrectMatch sorts its own marginals by size and loses the pairing."""
+    counts = col.dropna().astype(int).value_counts()
+    return counts.loc[sorted_codes].to_numpy(dtype=float) / counts.sum()
 
 
 def build_uniq_vals(
@@ -121,7 +117,9 @@ def fit_one(iso3: str) -> dict[str, Any] | None:
 
     G = correctmatch.fit_model(data, exact_marginal=True)
 
-    sigma, probs_per_col = extract_sigma_and_probs(G, len(feature_cols))
+    from juliacall import Main as jl
+
+    sigma = np.array(jl.getproperty(G, jl.Symbol("Σ")))
     assert sigma.shape == (len(feature_cols), len(feature_cols))
 
     # Build the answer choices and frequencies shown on the site.
@@ -132,14 +130,10 @@ def fit_one(iso3: str) -> dict[str, Any] | None:
         if label in marginals_out:
             print(f"  ⚠ duplicate label {label!r} for {col!r}; skipping")
             continue
-        uniq_vals = build_uniq_vals(col, sorted_codes_per_col[j], labels)
-        p = probs_per_col[j]
-        if len(p) != len(uniq_vals):
-            print(f"  ⚠ {iso3}/{col}: |p|={len(p)} vs |uniqVals|={len(uniq_vals)}")
-            return None
+        sorted_codes = sorted_codes_per_col[j]
         marginals_out[label] = {
-            "probs": [float(x) for x in p.tolist()],
-            "uniqVals": uniq_vals,
+            "probs": marginal_probs(df[col], sorted_codes).tolist(),
+            "uniqVals": build_uniq_vals(col, sorted_codes, labels),
         }
         avail_var.append(label)
 
