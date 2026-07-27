@@ -221,9 +221,17 @@ const prefersReducedMotion = () =>
 export default function PortraitRotator() {
   const [idx, setIdx] = useState(0);
   const [shown, setShown] = useState(true);
+  const [reduced, setReduced] = useState(prefersReducedMotion);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setReduced(query.matches);
+    query.addEventListener("change", update);
+    return () => query.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    if (reduced) return;
     let fadeTimer: ReturnType<typeof setTimeout>;
     const timer = setInterval(() => {
       setShown(false);
@@ -236,7 +244,7 @@ export default function PortraitRotator() {
       clearInterval(timer);
       clearTimeout(fadeTimer);
     };
-  }, []);
+  }, [reduced]);
 
   const portrait = PORTRAITS[idx];
   const fadeStyle = { transitionDuration: `${FADE}ms` };
@@ -253,7 +261,7 @@ export default function PortraitRotator() {
         <p class={`text-balance text-base text-ink/85 leading-snug ${fadeClass}`} style={fadeStyle}>
           {portrait.sentence}
         </p>
-        <p class={`mt-1 font-serif text-2xl text-accent italic ${fadeClass}`} style={fadeStyle}>
+        <p class={`mt-1 font-serif text-2xl text-accent-ink italic ${fadeClass}`} style={fadeStyle}>
           about {fmt(roundToTwoDigits(portrait.crowd))} people
         </p>
       </div>

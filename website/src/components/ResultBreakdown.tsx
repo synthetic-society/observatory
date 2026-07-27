@@ -27,6 +27,12 @@ export default function ResultBreakdown() {
   const [recomputing, setRecomputing] = useState(false);
   const client = useRef<UniquenessClient | null>(null);
   const latestToggle = useRef(0);
+  const heading = useRef<HTMLHeadingElement>(null);
+
+  // The result replaces the loading message, so move focus to announce it.
+  useEffect(() => {
+    if (phase === "ready") heading.current?.focus();
+  }, [phase]);
 
   useEffect(() => {
     const storedAnswers = loadAnswers();
@@ -81,10 +87,10 @@ export default function ResultBreakdown() {
   const quiz = quizSignal.value;
   if (!quiz) {
     return (
-      <div class="mx-auto max-w-5xl px-6 py-20 text-center">
-        <p class="font-serif text-3xl text-ink">
+      <div class="mx-auto max-w-5xl px-6 py-20 text-center" role={phase === "error" ? "alert" : "status"}>
+        <h1 class="font-serif text-3xl text-ink">
           {phase === "error" ? "We couldn’t calculate your result." : "Loading the country model…"}
-        </p>
+        </h1>
         {phase === "error" && (
           <Button variant="outline" type="button" onClick={() => location.assign("/quiz")} class="mt-6">
             Retake the test
@@ -100,10 +106,10 @@ export default function ResultBreakdown() {
 
   if (phase !== "ready") {
     return (
-      <div class="mx-auto max-w-5xl px-6 py-20 text-center">
-        <p class="font-serif text-3xl text-ink">
+      <div class="mx-auto max-w-5xl px-6 py-20 text-center" role={phase === "error" ? "alert" : "status"}>
+        <h1 class="font-serif text-3xl text-ink">
           {phase === "error" ? "We couldn’t calculate your result." : "Computing your identifiability…"}
-        </p>
+        </h1>
         <p class="mt-3 text-ink/70 text-sm">
           {phase === "error"
             ? "Please retake the test and try again."
@@ -175,8 +181,8 @@ export default function ResultBreakdown() {
   return (
     <div class="mx-auto max-w-7xl px-6 py-12">
       <div>
-        <h1 class="text-balance font-semibold text-4xl text-ink leading-[1.05] sm:text-6xl">
-          You are <span class="font-medium font-serif text-accent italic">{basePct}%</span> identifiable from the
+        <h1 ref={heading} tabIndex={-1} class="text-balance font-semibold text-4xl text-ink leading-[1.05] sm:text-6xl">
+          You are <span class="font-medium font-serif text-accent-ink italic">{basePct}%</span> identifiable from the
           answers you gave.
         </h1>
         <p class="my-6 max-w-3xl text-balance text-ink/75 text-xl">
@@ -191,17 +197,11 @@ export default function ResultBreakdown() {
       <div class="mt-20">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
           <h2 class="font-semibold text-2xl text-ink">What made you findable</h2>
-          <p class="text-ink/75 text-lg">
+          <p class="text-ink/75 text-lg" role="status" aria-busy={recomputing}>
             {someOff ? (
               <>
                 With only {onCount} {onCount === 1 ? "attribute" : "attributes"}, you would have been{" "}
-                <span
-                  class={`font-serif text-accent italic ${recomputing ? "opacity-40" : ""}`}
-                  aria-busy={recomputing}
-                >
-                  {currentPct}%
-                </span>{" "}
-                identifiable.
+                <span class="font-serif text-accent-ink italic">{currentPct}%</span> identifiable.
               </>
             ) : (
               "Toggle an attribute off to see how much less identifiable you'd be."
@@ -220,18 +220,28 @@ export default function ResultBreakdown() {
                 }`}
               >
                 <input
+                  id={`include-${row.questionId}`}
                   type="checkbox"
                   checked={row.on}
                   onChange={() => toggle(row.questionId)}
-                  aria-label={`Include ${row.label}`}
                   class="h-4 w-4 accent-ink"
                 />
-                <span class="font-semibold">{row.label}</span>
+                <label for={`include-${row.questionId}`} class="font-semibold">
+                  {row.label}
+                </label>
                 <span class="hidden truncate text-ink/70 md:inline">{row.value}</span>
-                <div class="hidden items-center gap-3 md:flex">
+                <div
+                  class="hidden items-center gap-3 md:flex"
+                  role="img"
+                  aria-label={
+                    row.contribution == null
+                      ? "Contribution still being calculated"
+                      : `Adds ${row.contribution.toFixed(1)} percentage points`
+                  }
+                >
                   <div class="h-2 flex-1 overflow-hidden rounded-full bg-ink/10">
                     <div
-                      class={`h-full rounded-full ${row.on ? "bg-accent" : "bg-ink/25"}`}
+                      class={`h-full rounded-full ${row.on ? "bg-accent-ink" : "bg-ink/25"}`}
                       style={{ width: `${barWidth}%` }}
                     />
                   </div>

@@ -1,4 +1,6 @@
 import { signal } from "@preact/signals";
+import type { Ref } from "preact";
+import { useEffect, useRef } from "preact/hooks";
 import { availableCountries, DEFAULT_COUNTRY } from "../data/loadModel";
 import { answerDisplay, isAnswered, isValidDob } from "../data/quiz";
 import {
@@ -29,9 +31,17 @@ const pickedCountry = signal<string>(
 
 function ProgressBar({ total, index }: { total: number; index: number }) {
   return (
-    <div class="mb-8 grid gap-1.5" style={{ gridTemplateColumns: `repeat(${total},minmax(0,1fr))` }}>
+    <div
+      class="mb-8 grid gap-1.5"
+      style={{ gridTemplateColumns: `repeat(${total},minmax(0,1fr))` }}
+      role="progressbar"
+      aria-label="Quiz progress"
+      aria-valuenow={index + 1}
+      aria-valuemin={1}
+      aria-valuemax={total}
+    >
       {Array.from({ length: total }, (_, i) => (
-        <div class={`h-1.5 rounded-full ${i === index ? "bg-accent" : i < index ? "bg-ink" : "bg-ink/15"}`} />
+        <div class={`h-1.5 rounded-full ${i === index ? "bg-accent-ink" : i < index ? "bg-ink" : "bg-ink/15"}`} />
       ))}
     </div>
   );
@@ -39,22 +49,31 @@ function ProgressBar({ total, index }: { total: number; index: number }) {
 
 export default function Quiz() {
   const quiz = quizSignal.value;
+  const heading = useRef<HTMLHeadingElement>(null);
+  const stepKey = `${countryChosen.value}:${currentIndex.value}`;
+  const shownStep = useRef(stepKey);
+
+  // Each step replaces the previous one in place, so move focus to announce it.
+  useEffect(() => {
+    if (shownStep.current !== stepKey) heading.current?.focus();
+    shownStep.current = stepKey;
+  }, [stepKey]);
 
   if (!countryChosen.value) {
     return (
       <div class="mx-auto max-w-7xl px-6 py-4">
         <ProgressBar total={(quiz?.steps.length ?? 0) + 1} index={0} />
-        <CountryStep />
+        <CountryStep headingRef={heading} />
       </div>
     );
   }
 
   if (!quiz) {
     return (
-      <div class="mx-auto max-w-5xl px-6 py-20 text-center">
-        <p class="font-serif text-3xl text-ink">
+      <div class="mx-auto max-w-5xl px-6 py-20 text-center" role={quizError.value ? "alert" : "status"}>
+        <h1 class="font-serif text-3xl text-ink">
           {quizError.value ? "We couldn’t load that country." : "Loading the country model…"}
-        </p>
+        </h1>
         {quizError.value && (
           <Button variant="outline" type="button" onClick={editCountry} class="mt-6">
             Choose another country
@@ -107,10 +126,10 @@ export default function Quiz() {
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
         <section>
           <p class="text-ink/70 text-xs uppercase tracking-wide">{quiz.countryName}</p>
-          <div class="mt-2 flex items-end gap-4">
-            <div class="font-medium font-serif text-5xl text-ink leading-none sm:text-7xl">{fmt(crowd)}</div>
+          <div class="mt-2" role="status">
+            <p class="font-medium font-serif text-5xl text-ink leading-none sm:text-7xl">{fmt(crowd)}</p>
+            <p class="text-ink text-xl">people who could be you</p>
           </div>
-          <p class="text-ink text-xl">people who could be you</p>
 
           <div class="mt-6 overflow-hidden">
             <DotField variant="black" crowd={crowd} />
@@ -133,7 +152,9 @@ export default function Quiz() {
           <p class="text-ink/70 text-sm">
             Question {index + 1} of {total}
           </p>
-          <h2 class="mt-2 font-semibold text-4xl text-ink">{step.title}</h2>
+          <h1 ref={heading} tabIndex={-1} class="mt-2 font-semibold text-4xl text-ink">
+            {step.title}
+          </h1>
           {step.blurb && <p class="mt-4 max-w-md text-ink/75 text-sm">{step.blurb}</p>}
 
           {step.kind === "dob" ? <DobInputs /> : <SingleSelect stepId={step.id} />}
@@ -152,7 +173,7 @@ export default function Quiz() {
   );
 }
 
-function CountryStep() {
+function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
   const start = () => {
     if (pickedCountry.value) chooseCountry(pickedCountry.value);
   };
@@ -160,7 +181,9 @@ function CountryStep() {
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       <section>
         <p class="text-ink/70 text-xs uppercase tracking-wide">Step 1</p>
-        <h2 class="mt-2 font-semibold text-4xl text-ink">Which country are you in?</h2>
+        <h1 ref={headingRef} tabIndex={-1} class="mt-2 font-semibold text-4xl text-ink">
+          Which country are you in?
+        </h1>
         <p class="mt-4 max-w-md text-ink/75 text-sm">
           We compare you against that country’s census. Pick where you live, and we’ll ask a handful of everyday details
           about you.
@@ -173,7 +196,8 @@ function CountryStep() {
         </label>
         <select
           id="country"
-          class="mt-2 block w-full border border-ink bg-transparent px-4 py-3 font-semibold text-base text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          autocomplete="country-name"
+          class="mt-2 block w-full border border-ink bg-transparent px-4 py-3 font-semibold text-base text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
           value={pickedCountry.value}
           onChange={(e) => {
             pickedCountry.value = (e.target as HTMLSelectElement).value;
@@ -204,57 +228,71 @@ function SingleSelect({ stepId }: { stepId: string }) {
   if (!question) return null;
   const selected = answers.value[question.id];
   return (
-    <ul class="mt-6 grid gap-2 sm:grid-cols-2">
-      {question.options.map((option) => {
-        const isSelected = option.id === selected;
-        return (
-          <li key={option.id}>
-            <button
-              type="button"
-              onClick={() => setAnswer(question.id, option.id)}
-              class={`flex w-full items-center justify-between border px-4 py-3 text-left text-sm transition ${
-                isSelected ? "border-accent bg-accent/30 text-navy" : "border-ink text-navy hover:bg-ink/20"
-              }`}
-            >
-              <span class="font-semibold">{option.label}</span>
-              <span class="text-xs opacity-80">{option.crowdLabel}</span>
-            </button>
-          </li>
-        );
-      })}
-    </ul>
+    <fieldset class="mt-6 grid gap-2 sm:grid-cols-2">
+      <legend class="sr-only">{question.title}</legend>
+      {question.options.map((option) => (
+        <label
+          key={option.id}
+          class={`flex items-center justify-between border px-4 py-3 text-sm transition has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ink has-[:focus-visible]:outline-offset-2 ${
+            option.id === selected ? "border-accent-ink bg-accent/30 text-navy" : "border-ink text-navy hover:bg-ink/20"
+          }`}
+        >
+          <input
+            type="radio"
+            name={question.id}
+            class="sr-only"
+            checked={option.id === selected}
+            onChange={() => setAnswer(question.id, option.id)}
+          />
+          <span class="font-semibold">{option.label}</span>
+          <span class="text-xs opacity-80">{option.crowdLabel}</span>
+        </label>
+      ))}
+    </fieldset>
   );
 }
 
 function DobInputs() {
   const inputClass =
-    "block border border-ink bg-transparent px-3 py-2 text-sm font-semibold text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-bg";
+    "block border border-ink bg-transparent px-3 py-2 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2";
   const fields = [
     { id: "dob_day", label: "Day", autocomplete: "bday-day", maxLength: 2, width: "w-16" },
     { id: "dob_month", label: "Month", autocomplete: "bday-month", maxLength: 2, width: "w-16" },
     { id: "dob_year", label: "Year", autocomplete: "bday-year", maxLength: 4, width: "w-24" },
   ] as const;
+  const complete = answers.value.dob_day && answers.value.dob_month && answers.value.dob_year?.length === 4;
+  const invalid = !!complete && !isValidDob(answers.value);
 
   return (
-    <div class="mt-6 flex items-end gap-4">
-      {fields.map(({ id, label, autocomplete, maxLength, width }) => (
-        <div key={id}>
-          <label for={id} class="mb-2 block text-ink text-sm">
-            {label}
-          </label>
-          <input
-            id={id}
-            type="text"
-            inputmode="numeric"
-            autocomplete={autocomplete}
-            pattern="[0-9]*"
-            maxlength={maxLength}
-            class={`${inputClass} ${width} text-center`}
-            value={answers.value[id] ?? ""}
-            onInput={(event) => setAnswer(id, onlyDigits((event.target as HTMLInputElement).value, maxLength))}
-          />
-        </div>
-      ))}
-    </div>
+    <fieldset class="mt-6">
+      <legend class="sr-only">Date of birth</legend>
+      <div class="flex items-end gap-4">
+        {fields.map(({ id, label, autocomplete, maxLength, width }) => (
+          <div key={id}>
+            <label for={id} class="mb-2 block text-ink text-sm">
+              {label}
+            </label>
+            <input
+              id={id}
+              type="text"
+              inputmode="numeric"
+              autocomplete={autocomplete}
+              pattern="[0-9]*"
+              maxlength={maxLength}
+              aria-invalid={invalid}
+              aria-describedby={invalid ? "dob-error" : undefined}
+              class={`${inputClass} ${width} text-center`}
+              value={answers.value[id] ?? ""}
+              onInput={(event) => setAnswer(id, onlyDigits((event.target as HTMLInputElement).value, maxLength))}
+            />
+          </div>
+        ))}
+      </div>
+      {invalid && (
+        <p id="dob-error" role="alert" class="mt-3 text-ink text-sm">
+          That date doesn’t exist. Use a real day and month, and a year between 1900 and today.
+        </p>
+      )}
+    </fieldset>
   );
 }

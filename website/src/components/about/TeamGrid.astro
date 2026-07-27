@@ -32,23 +32,29 @@ const team = [
 ---
 
 <ul class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-  {team.map((person) => (
-    <li>
-      <a
-        href={person.href}
-        target="_blank"
-        rel="noopener"
-        class="block transition hover:opacity-90"
-      >
-        <img
-          src={person.img}
-          alt={person.name}
-          class="aspect-square w-full rounded-md object-cover grayscale"
-        />
-        <p class="mt-4 font-serif text-ink text-xl">{person.name}</p>
-        <p class="text-ink/75">{person.role}</p>
-        <p class="text-ink/70">{person.affiliation}</p>
-      </a>
-    </li>
-  ))}
+  {team.map((person) => {
+    const newTab = !person.href.startsWith("mailto:");
+    return (
+      <li>
+        <a
+          href={person.href}
+          target={newTab ? "_blank" : undefined}
+          rel="noopener noreferrer"
+          class="block transition hover:opacity-90"
+        >
+          <img
+            src={person.img}
+            alt=""
+            class="aspect-square w-full rounded-md object-cover grayscale"
+          />
+          <p class="mt-4 font-serif text-ink text-xl">
+            {person.name}
+            {newTab && <span class="sr-only"> (opens in a new tab)</span>}
+          </p>
+          <p class="text-ink/75">{person.role}</p>
+          <p class="text-ink/70">{person.affiliation}</p>
+        </a>
+      </li>
+    );
+  })}
 </ul>

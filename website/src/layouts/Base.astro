@@ -17,7 +17,11 @@ const nav = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Estimate how identifiable you are in an “anonymised” dataset. Everything runs in your browser."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preload" href="/fonts/MDSystem-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/fonts/JunicodeVF-Roman.woff2" as="font" type="font/woff2" crossorigin />
@@ -25,7 +29,7 @@ const nav = [
   </head>
   <body class="bg-bg font-sans text-ink antialiased">
     <header class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-      <a href="/" class="flex items-center gap-2.5">
+      <a href="/" aria-current={path === "/" ? "page" : undefined} class="flex items-center gap-2.5">
         <span
           id="eye"
           class="group relative grid h-5 w-5 place-items-center overflow-hidden rounded-full border border-ink"
@@ -34,14 +38,11 @@ const nav = [
             <span class="block h-2 w-2 rounded-full bg-ink transition-transform duration-200 group-hover:scale-150"
             ></span>
           </span>
-          <span
-            aria-hidden="true"
-            class="pointer-events-none absolute inset-0 bg-bg"
-            style="animation: eye-blink 9s ease-in-out infinite; will-change: transform"></span>
+          <span aria-hidden="true" class="eye-lid pointer-events-none absolute inset-0 bg-bg"></span>
         </span>
         <span class="font-semibold">Observatory of Anonymity</span>
       </a>
-      <nav class="hidden md:flex items-center gap-7">
+      <nav aria-label="Main" class="hidden md:flex items-center gap-7">
         {
           nav.map((item) => (
             <a
@@ -72,7 +73,7 @@ const nav = [
       </button>
     </header>
     <div class="border-t border-ink/15"></div>
-    <nav id="mobile-nav" class="hidden md:hidden border-b border-ink/15">
+    <nav id="mobile-nav" aria-label="Main, mobile" class="hidden md:hidden border-b border-ink/15">
       <ul class="mx-auto flex max-w-7xl flex-col">
         {
           nav.map((item) => (
@@ -98,10 +99,12 @@ const nav = [
       // The pupil follows the pointer, more the closer it gets.
       const PUPIL_MAX_OFFSET = 2.5;
       const PUPIL_TRACKING_RADIUS = 120;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const eye = document.getElementById("eye");
       const pupil = document.getElementById("eye-pupil");
       if (eye && pupil) {
         window.addEventListener("pointermove", (event) => {
+          if (reduceMotion.matches) return;
           const box = eye.getBoundingClientRect();
           const dx = event.clientX - (box.left + box.width / 2);
           const dy = event.clientY - (box.top + box.height / 2);
@@ -115,14 +118,38 @@ const nav = [
       const menu = document.getElementById("mobile-nav");
       const iconOpen = document.getElementById("nav-icon-open");
       const iconClose = document.getElementById("nav-icon-close");
-      btn?.addEventListener("click", () => {
-        const open = menu?.classList.toggle("hidden") === false;
-        btn.setAttribute("aria-expanded", String(open));
-        btn.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      const isOpen = () => btn?.getAttribute("aria-expanded") === "true";
+      const setOpen = (open: boolean) => {
+        menu?.classList.toggle("hidden", !open);
+        btn?.setAttribute("aria-expanded", String(open));
+        btn?.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
         iconOpen?.classList.toggle("hidden", open);
         iconClose?.classList.toggle("hidden", !open);
+        if (open) menu?.querySelector("a")?.focus();
+      };
+      btn?.addEventListener("click", () => setOpen(!isOpen()));
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape" || !isOpen()) return;
+        setOpen(false);
+        btn?.focus();
       });
+      document.addEventListener("pointerdown", (event) => {
+        const target = event.target as Node;
+        if (isOpen() && !menu?.contains(target) && !btn?.contains(target)) setOpen(false);
+      });
+
+      // Kept out of the markup so address harvesters have nothing to scrape.
+      const email = document.getElementById("contact-email");
+      if (email) {
+        const address = `${email.dataset.user}@${email.dataset.host}`;
+        email.outerHTML = `<a class="whitespace-nowrap underline" href="mailto:${address}">${address}</a>`;
+      }
     </script>
+    <noscript>
+      <p class="mx-auto max-w-7xl px-6 py-4 text-ink">
+        The anonymity test needs JavaScript. Nothing is sent to a server, the whole computation runs in your browser.
+      </p>
+    </noscript>
     <main><slot /></main>
     <footer class="mt-24 border-t border-ink/15">
       <div class="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[1.4fr_1fr]">

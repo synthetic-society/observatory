@@ -50,6 +50,18 @@
   size-adjust: 127%;
 }
 
+.eye-lid {
+  animation: eye-blink 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eye-lid {
+    animation: none;
+    transform: translateY(-100%);
+  }
+}
+
 @keyframes eye-blink {
   0%,
   28% {
@@ -86,6 +98,7 @@
   --color-ink: #15205c;
   --color-navy: #15205c;
   --color-accent: #d83a86;
+  --color-accent-ink: #97295e;
   --color-blue: #a8c5dc;
   --color-green: #a8c97a;
   --color-muted: #6b6f87;
