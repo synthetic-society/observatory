@@ -7,6 +7,7 @@ import Button from "./ui/Button";
 
 const DRAWS = 30;
 const SEED = 42;
+const LOADING_MESSAGE_DELAY = 600; // Small debounce to avoid a flash of text if the model loads quickly
 const fmt = (n: number) => n.toLocaleString("en-US");
 const pct = (value: number) => {
   if (value >= 0.1) return (value * 100).toFixed(1);
@@ -28,6 +29,7 @@ export default function ResultBreakdown() {
   const [enabled, setEnabled] = useState<Record<string, boolean>>({});
   const [recomputing, setRecomputing] = useState(false);
   const [toggleFailed, setToggleFailed] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
   const client = useRef<UniquenessClient | null>(null);
   const latestToggle = useRef(0);
   const heading = useRef<HTMLHeadingElement>(null);
@@ -36,6 +38,11 @@ export default function ResultBreakdown() {
   useEffect(() => {
     if (phase === "ready") heading.current?.focus();
   }, [phase]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowLoading(true), LOADING_MESSAGE_DELAY);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const storedAnswers = loadAnswers();
@@ -73,6 +80,8 @@ export default function ResultBreakdown() {
       worker.dispose();
     };
   }, []);
+
+  if (phase === "loading" && !showLoading) return null;
 
   const quiz = quizSignal.value;
   if (!quiz) {
