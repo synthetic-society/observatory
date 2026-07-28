@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "astro sync",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
