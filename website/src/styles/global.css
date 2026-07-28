@@ -110,4 +110,11 @@ h1[tabindex="-1"]:focus-visible {
   --color-muted: #6b6f87;
   --font-sans: "MD System", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Junicode", ui-serif, Georgia, serif;
+
+  --animate-label-swap: label-swap 260ms ease-out;
+  @keyframes label-swap {
+    from {
+      opacity: 0.25;
+    }
+  }
 }
