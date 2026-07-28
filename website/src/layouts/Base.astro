@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import CitationBlock from "../components/ui/CitationBlock";
 
 interface Props {
   title?: string;
@@ -11,6 +12,39 @@ const nav = [
   { href: "/research", label: "The research" },
   { href: "/about", label: "About us" },
 ];
+const section = "grid gap-4 py-10 md:grid-cols-[1fr_3fr] md:gap-12 md:pt-0";
+const dividedSection = `${section} border-t border-ink/15 md:border-t-0`;
+const heading = "text-xl text-ink md:pt-10";
+const body = "max-w-4xl text-sm leading-relaxed text-ink md:pt-10";
+const dividedBody = `${body} md:border-t md:border-ink/15`;
+
+export const BIBTEX = `@inproceedings{10.1145/3442442.3458606,
+author = {Rocher, Luc and Muthu, Meenatchi Sundaram and de Montjoye, Yves-Alexandre},
+title = {The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 Countries},
+year = {2021},
+isbn = {9781450383134},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3442442.3458606},
+doi = {10.1145/3442442.3458606},
+booktitle = {Companion Proceedings of the Web Conference 2021},
+pages = {687–689},
+numpages = {3},
+location = {Ljubljana, Slovenia},
+series = {WWW '21}
+}`;
+
+export const CITATIONS = {
+  APA: "Rocher, L., Muthu, M. S., & de Montjoye, Y.-A. (2021). The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 countries. In Companion Proceedings of the Web Conference 2021 (pp. 687–689). ACM. WWW ’21: The Web Conference 2021. https://doi.org/10.1145/3442442.3458606",
+  MLA: "Rocher, Luc, et al. ‘The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 Countries’. Companion Proceedings of the Web Conference 2021, ACM, 19 Apr. 2021, WWW ’21: The Web Conference 2021, pp. 687–89. Crossref, https://doi.org/10.1145/3442442.3458606.",
+  Chicago:
+    "Rocher, Luc, Meenatchi Sundaram Muthu, and Yves-Alexandre de Montjoye. 2021. ‘The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 Countries’. In Companion Proceedings of the Web Conference 2021. WWW ’21: The Web Conference 2021. ACM. https://doi.org/10.1145/3442442.3458606.",
+  Harvard:
+    "Rocher, L., Muthu, M.S. and de Montjoye, Y.-A. (2021) ‘The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 countries’, Companion Proceedings of the Web Conference 2021. WWW ’21: The Web Conference 2021, ACM. Available at: https://doi.org/10.1145/3442442.3458606.",
+  IEEE: "L. Rocher, M. S. Muthu, and Y.-A. de Montjoye, ‘The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 countries’, Companion Proceedings of the Web Conference 2021. ACM, pp. 687–689, Apr. 19, 2021. doi: 10.1145/3442442.3458606.",
+  Vancouver:
+    "Rocher L, Muthu MS, de Montjoye Y-A. The Observatory of Anonymity: An Interactive Tool to Understand Re-Identification Risks in 89 countries. Companion Proceedings of the Web Conference 2021 2021:687–9. https://doi.org/10.1145/3442442.3458606.",
+};
 ---
 
 <!doctype html>
@@ -23,22 +57,46 @@ const nav = [
       content="Estimate how identifiable you are in an “anonymised” dataset. Everything runs in your browser."
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/fonts/MDSystem-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/JunicodeVF-Roman.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/MDSystem-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/JunicodeVF-Roman.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <title>{title}</title>
   </head>
   <body class="flex min-h-dvh flex-col bg-bg font-sans text-ink antialiased">
-    <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
-      <a href="/" aria-current={path === "/" ? "page" : undefined} class="-my-2.5 flex items-center gap-2.5 py-2.5">
+    <header
+      class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5"
+    >
+      <a
+        href="/"
+        aria-current={path === "/" ? "page" : undefined}
+        class="-my-2.5 flex items-center gap-2.5 py-2.5"
+      >
         <span
           id="eye"
           class="group relative grid h-5 w-5 place-items-center overflow-hidden rounded-full border border-ink"
         >
-          <span id="eye-pupil" style="transition: transform 80ms linear; will-change: transform">
-            <span class="block h-2 w-2 rounded-full bg-ink transition-transform duration-200 group-hover:scale-150"
+          <span
+            id="eye-pupil"
+            style="transition: transform 80ms linear; will-change: transform"
+          >
+            <span
+              class="block h-2 w-2 rounded-full bg-ink transition-transform duration-200 group-hover:scale-150"
             ></span>
           </span>
-          <span aria-hidden="true" class="eye-lid pointer-events-none absolute inset-0 bg-bg"></span>
+          <span
+            aria-hidden="true"
+            class="eye-lid pointer-events-none absolute inset-0 bg-bg"></span>
         </span>
         <span class="font-semibold">Observatory of Anonymity</span>
       </a>
@@ -50,7 +108,9 @@ const nav = [
               aria-current={path === item.href ? "page" : undefined}
               class:list={[
                 "-my-2.5 inline-flex items-center py-2.5 underline-offset-4 transition",
-                path === item.href ? "font-semibold underline" : "hover:underline",
+                path === item.href
+                  ? "font-semibold underline"
+                  : "hover:underline",
               ]}
             >
               {item.label}
@@ -66,12 +126,49 @@ const nav = [
         aria-controls="mobile-nav"
         aria-expanded="false"
       >
-        <svg id="nav-icon-open" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
-        <svg id="nav-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18" /><line x1="6" y1="18" x2="18" y2="6" /></svg>
+        <svg
+          id="nav-icon-open"
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="3" y1="6" x2="21" y2="6"></line><line
+            x1="3"
+            y1="12"
+            x2="21"
+            y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg
+        >
+        <svg
+          id="nav-icon-close"
+          class="hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="6" y1="6" x2="18" y2="18"></line><line
+            x1="6"
+            y1="18"
+            x2="18"
+            y2="6"></line></svg
+        >
       </button>
     </header>
     <div class="border-t border-ink/15"></div>
-    <nav id="mobile-nav" aria-label="Main, mobile" class="hidden md:hidden border-b border-ink/15">
+    <nav
+      id="mobile-nav"
+      aria-label="Main, mobile"
+      class="hidden md:hidden border-b border-ink/15"
+    >
       <ul class="mx-auto flex max-w-7xl flex-col">
         {
           nav.map((item) => (
@@ -81,7 +178,9 @@ const nav = [
                 aria-current={path === item.href ? "page" : undefined}
                 class:list={[
                   "block px-6 py-4 transition",
-                  path === item.href ? "font-semibold underline underline-offset-4" : "hover:bg-ink/5",
+                  path === item.href
+                    ? "font-semibold underline underline-offset-4"
+                    : "hover:bg-ink/5",
                 ]}
               >
                 {item.label}
@@ -95,7 +194,9 @@ const nav = [
       // The pupil follows the pointer, more the closer it gets.
       const PUPIL_MAX_OFFSET = 2.5;
       const PUPIL_TRACKING_RADIUS = 120;
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
       const eye = document.getElementById("eye");
       const pupil = document.getElementById("eye-pupil");
       if (eye && pupil) {
@@ -111,7 +212,8 @@ const nav = [
           const dx = event.clientX - (box.left + box.width / 2);
           const dy = event.clientY - (box.top + box.height / 2);
           const distance = Math.hypot(dx, dy) || 1;
-          const offset = Math.min(1, distance / PUPIL_TRACKING_RADIUS) * PUPIL_MAX_OFFSET;
+          const offset =
+            Math.min(1, distance / PUPIL_TRACKING_RADIUS) * PUPIL_MAX_OFFSET;
           pupil.style.transform = `translate(${(dx / distance) * offset}px, ${(dy / distance) * offset}px)`;
         });
       }
@@ -124,7 +226,10 @@ const nav = [
       const setOpen = (open: boolean) => {
         menu?.classList.toggle("hidden", !open);
         btn?.setAttribute("aria-expanded", String(open));
-        btn?.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+        btn?.setAttribute(
+          "aria-label",
+          open ? "Close navigation" : "Open navigation",
+        );
         iconOpen?.classList.toggle("hidden", open);
         iconClose?.classList.toggle("hidden", !open);
         if (open) menu?.querySelector("a")?.focus();
@@ -139,7 +244,6 @@ const nav = [
         const target = event.target as Node;
         if (isOpen() && !menu?.contains(target) && !btn?.contains(target)) setOpen(false);
       });
-
     </script>
     <noscript>
       <p class="mx-auto max-w-7xl px-6 py-4 text-ink">
@@ -148,32 +252,50 @@ const nav = [
     </noscript>
     <main class="flex-1"><slot /></main>
     <footer class="mt-12 border-t border-ink/15 lg:mt-24">
-      <div class="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
-        <div>
-          <p class="text-xl text-ink">The Observatory of Anonymity</p>
-          <p class="mt-4 max-w-xl text-sm leading-relaxed text-ink">
-            We are committed to protecting the privacy of visitors to our
-            website. The Observatory of Anonymity neither collects nor shares
-            any personal data. All statistical computations run entirely in the
-            browser, and no personal data is transmitted to our servers. We
-            do not use analytics or tracking scripts.
-          </p>
-          <p class="mt-4 max-w-xl text-sm leading-relaxed text-ink">
-            The source code of the Observatory is available at{" "}
-            <a class="underline wrap-break-word" href="https://github.com/computationalprivacy/observatory">github.com/computationalprivacy/observatory</a>{" "}
-            and distributed under a free license.
-          </p>
-        </div>
-        <div>
-          <p class="text-xl text-ink">Contacting us</p>
-          <p class="mt-4 max-w-md text-sm leading-relaxed text-ink/75">
+      <div class="mx-auto max-w-7xl px-6">
+        <section class={section}>
+          <p class={heading}>The Observatory of Anonymity</p>
+          <div class={body}>
+            <p>
+              We are committed to protecting the privacy of visitors to our
+              website. The Observatory of Anonymity neither collects nor shares
+              any personal data. All statistical computations run entirely in
+              the browser, and no personal data is transmitted to our servers.
+              We do not use analytics or tracking scripts.
+            </p>
+            <p class="mt-4">
+              The source code of the Observatory is available at{" "}
+              <a class="underline wrap-break-word" href="https://github.com/computationalprivacy/observatory">github.com/computationalprivacy/observatory</a>{" "}
+              and distributed under a GPL 3.0 free license.
+            </p>
+          </div>
+        </section>
+        <section class={dividedSection}>
+          <p class={heading}>Contacting us</p>
+          <p class={dividedBody}>
             Have questions, comments, or concerns? Please contact Luc Rocher by
             email at:{" "}
             <span role="img" class="whitespace-nowrap select-none" aria-label="luc dot rocher at oii dot ox dot ac dot uk">x@y</span>{" "}
             where <span class="select-none">x=luc.rocher</span> and{" "}
             <span class="select-none">y=oii.ox.ac.uk</span>.
           </p>
-        </div>
+        </section>
+        <section class={dividedSection}>
+          <p class={heading}>Citing the Observatory</p>
+          <div class={dividedBody}>
+            <p>
+              If you use the Observatory of Anonymity, please cite our paper
+              published at WWW 2021.
+            </p>
+            <div class="mt-6">
+              <CitationBlock
+                bibtex={BIBTEX}
+                citations={CITATIONS}
+                client:visible
+              />
+            </div>
+          </div>
+        </section>
       </div>
     </footer>
   </body>
