@@ -120,7 +120,7 @@ const SKIPPED_ATTRS = new Set(["Urban/rural"]); // In the models but never asked
 const ageIndex = (model: CountryModel, age: number): number => {
   const ages = model.marginals[AGE_ATTR]?.uniqVals;
   if (!ages || ages.length === 0) return Number.NaN;
-  return ages.reduce(
+  return ages.reduce<number>(
     (closest, value, index) =>
       Math.abs(Number(value) - age) < Math.abs(Number(ages[closest]) - age) ? index : closest,
     0,

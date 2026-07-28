@@ -277,7 +277,7 @@ function SingleSelect({ stepId }: { stepId: string }) {
       {question.options.map((option) => (
         <label
           key={option.id}
-          class={`flex items-center justify-between border px-4 py-3 text-sm transition has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-ink has-[:focus-visible]:outline-offset-2 ${
+          class={`flex items-center justify-between border px-4 py-3 text-sm transition has-focus-visible:outline-2 has-focus-visible:outline-ink has-focus-visible:outline-offset-2 ${
             option.id === selected ? "border-accent-ink bg-accent/30 text-navy" : "border-ink text-navy hover:bg-ink/20"
           }`}
         >

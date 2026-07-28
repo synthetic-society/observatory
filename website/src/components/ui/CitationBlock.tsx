@@ -13,7 +13,7 @@ export default function CitationBlock({ bibtex, citations }: Props) {
   const [open, setOpen] = useState(false);
   const picker = useRef<HTMLDivElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
-  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     if (!open) return;

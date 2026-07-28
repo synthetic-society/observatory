@@ -8,7 +8,7 @@ type StyleProps = {
   size?: Size;
 };
 
-type Props = Omit<JSX.IntrinsicElements["button"], "size" | "ref"> & StyleProps;
+type Props = Omit<JSX.IntrinsicElements["button"], "size" | "ref" | "class"> & StyleProps & { class?: string };
 
 const SIZES: Record<Size, string> = {
   md: "px-5 py-2.5 text-sm",
