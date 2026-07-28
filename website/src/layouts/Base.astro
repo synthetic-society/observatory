@@ -29,7 +29,7 @@ const nav = [
   </head>
   <body class="bg-bg font-sans text-ink antialiased">
     <header class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-      <a href="/" aria-current={path === "/" ? "page" : undefined} class="flex items-center gap-2.5">
+      <a href="/" aria-current={path === "/" ? "page" : undefined} class="-my-2.5 flex items-center gap-2.5 py-2.5">
         <span
           id="eye"
           class="group relative grid h-5 w-5 place-items-center overflow-hidden rounded-full border border-ink"
@@ -49,7 +49,7 @@ const nav = [
               href={item.href}
               aria-current={path === item.href ? "page" : undefined}
               class:list={[
-                "underline-offset-4 transition",
+                "-my-2.5 inline-flex items-center py-2.5 underline-offset-4 transition",
                 path === item.href ? "font-semibold underline" : "hover:underline",
               ]}
             >
@@ -61,7 +61,7 @@ const nav = [
       <button
         id="nav-toggle"
         type="button"
-        class="md:hidden flex h-9 w-9 items-center justify-center text-ink cursor-pointer"
+        class="md:hidden -mr-1 flex h-11 w-11 items-center justify-center text-ink cursor-pointer"
         aria-label="Open navigation"
         aria-controls="mobile-nav"
         aria-expanded="false"
@@ -147,7 +147,7 @@ const nav = [
       </p>
     </noscript>
     <main><slot /></main>
-    <footer class="mt-24 border-t border-ink/15">
+    <footer class="mt-12 border-t border-ink/15 lg:mt-24">
       <div class="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
         <div>
           <p class="text-xl text-ink">The Observatory of Anonymity</p>
@@ -159,8 +159,8 @@ const nav = [
             do not use analytics or tracking scripts.
           </p>
           <p class="mt-4 max-w-xl text-sm leading-relaxed text-ink">
-            The source code of the Observatory is available at
-            <a class="underline" href="https://github.com/computationalprivacy/observatory">github.com/computationalprivacy/observatory</a>
+            The source code of the Observatory is available at{" "}
+            <a class="underline wrap-break-word" href="https://github.com/computationalprivacy/observatory">github.com/computationalprivacy/observatory</a>{" "}
             and distributed under a free license.
           </p>
         </div>
@@ -168,8 +168,9 @@ const nav = [
           <p class="text-xl text-ink">Contacting us</p>
           <p class="mt-4 max-w-md text-sm leading-relaxed text-ink/75">
             Have questions, comments, or concerns? Please contact Luc Rocher by
-            email at: <span role="img" class="whitespace-nowrap select-none" aria-label="luc dot rocher at oii dot ox dot ac dot uk">x@y</span>
-            where <span class="select-none">x=luc.rocher</span> and
+            email at:{" "}
+            <span role="img" class="whitespace-nowrap select-none" aria-label="luc dot rocher at oii dot ox dot ac dot uk">x@y</span>{" "}
+            where <span class="select-none">x=luc.rocher</span> and{" "}
             <span class="select-none">y=oii.ox.ac.uk</span>.
           </p>
         </div>

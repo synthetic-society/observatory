@@ -69,7 +69,6 @@ export default function Quiz() {
   const stepKey = `${countryChosen.value}:${currentIndex.value}`;
   const shownStep = useRef(stepKey);
 
-  // Each step replaces the previous one in place, so move focus to announce it.
   useEffect(() => {
     if (shownStep.current !== stepKey) {
       heading.current?.focus();
@@ -136,35 +135,11 @@ export default function Quiz() {
 
   return (
     <div class="mx-auto max-w-7xl px-6 py-4">
-      {/* The country step comes before the questions, hence one extra. */}
+      {/* The country step comes before the questions, hence one extra */}
       <ProgressBar total={total + 1} index={index + 1} />
 
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
-        <section>
-          <p class="text-ink/70 text-xs uppercase tracking-wide">{quiz.countryName}</p>
-          <div class="mt-2" role="status">
-            <p class="font-medium font-serif text-5xl text-ink leading-none sm:text-7xl">{fmt(crowd)}</p>
-            <p class="text-ink text-xl">people who could be you</p>
-          </div>
-
-          <div class="mt-6 overflow-hidden">
-            <CrowdField crowd={crowd} />
-          </div>
-
-          <div class="mt-5 flex flex-wrap gap-2">
-            {answered.map((question) => {
-              const { label } = answerDisplay(quiz, question, answers.value);
-              return (
-                <span key={question.id} class="rounded-md bg-ink/5 px-3 py-1.5 text-ink text-xs">
-                  <span class="text-ink/70">{question.attr} </span>
-                  <strong class="font-semibold">{label}</strong>
-                </span>
-              );
-            })}
-          </div>
-        </section>
-
-        <section>
+        <section class="md:order-2">
           <p class="text-ink/70 text-sm">
             Question {index + 1} of {total}
           </p>
@@ -194,6 +169,30 @@ export default function Quiz() {
               <Button type="submit">{index === total - 1 ? "See result" : "Continue"} →</Button>
             </div>
           </form>
+        </section>
+
+        <section class="md:order-1">
+          <p class="text-ink/70 text-xs uppercase tracking-wide">{quiz.countryName}</p>
+          <div class="mt-2" role="status">
+            <p class="font-medium font-serif text-5xl text-ink leading-none sm:text-7xl">{fmt(crowd)}</p>
+            <p class="text-ink text-xl">people who could be you</p>
+          </div>
+
+          <div class="mt-6 overflow-hidden">
+            <CrowdField crowd={crowd} />
+          </div>
+
+          <div class="mt-5 flex flex-wrap gap-2">
+            {answered.map((question) => {
+              const { label } = answerDisplay(quiz, question, answers.value);
+              return (
+                <span key={question.id} class="rounded-md bg-ink/5 px-3 py-1.5 text-ink text-xs">
+                  <span class="text-ink/70">{question.attr} </span>
+                  <strong class="font-semibold">{label}</strong>
+                </span>
+              );
+            })}
+          </div>
         </section>
       </div>
     </div>
@@ -226,21 +225,36 @@ function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
         <label for="country" class="text-ink/70 text-sm">
           Country of residence
         </label>
-        <select
-          id="country"
-          autocomplete="country-name"
-          class="mt-2 block w-full border border-ink bg-transparent px-4 py-3 font-semibold text-base text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
-          value={pickedCountry.value}
-          onChange={(e) => {
-            pickedCountry.value = (e.target as HTMLSelectElement).value;
-          }}
-        >
-          {countries.map((country) => (
-            <option key={country.iso3} value={country.iso3}>
-              {country.name}
-            </option>
-          ))}
-        </select>
+        {/* We use appearance-none to prevent WebKit from painting its own opaque control background */}
+        <div class="relative mt-2">
+          <select
+            id="country"
+            autocomplete="country-name"
+            class="block w-full appearance-none border border-ink bg-transparent py-3 pr-11 pl-4 font-semibold text-base text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2"
+            value={pickedCountry.value}
+            onChange={(e) => {
+              pickedCountry.value = (e.target as HTMLSelectElement).value;
+            }}
+          >
+            {countries.map((country) => (
+              <option key={country.iso3} value={country.iso3}>
+                {country.name}
+              </option>
+            ))}
+          </select>
+          <svg
+            class="pointer-events-none absolute inset-y-0 right-4 my-auto h-4 w-4 text-ink"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </div>
         <p class="mt-2 text-ink/70 text-xs">
           {countries.length} {countries.length === 1 ? "country" : "countries"} available.
         </p>
@@ -284,7 +298,8 @@ function SingleSelect({ stepId }: { stepId: string }) {
 
 function DobInputs({ blocked }: { blocked: boolean }) {
   const inputClass =
-    "block border border-ink bg-transparent px-3 py-2 text-sm font-semibold text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2";
+    // We use 16px text to prevent iOS Safari from zooming in when focusing on a field
+    "block border border-ink bg-transparent px-3 py-2.5 text-base font-semibold text-ink focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2";
   const fields = [
     { id: "dob_day", label: "Day", autocomplete: "bday-day", maxLength: 2, width: "w-16" },
     { id: "dob_month", label: "Month", autocomplete: "bday-month", maxLength: 2, width: "w-16" },

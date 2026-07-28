@@ -6,13 +6,13 @@ import Base from "../layouts/Base.astro";
 
 <Base>
   <section class="mx-auto max-w-7xl px-6 pt-10 pb-12">
-    <div class="grid grid-cols-1 gap-10 md:grid-cols-[1.4fr_1fr]">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-[1.4fr_1fr]">
       <h1
-        class="font-sans text-6xl sm:text-7xl font-semibold leading-[1.2]  text-ink"
+        class="max-w-3xl text-balance font-sans text-6xl sm:text-7xl font-semibold leading-[1.2] text-ink"
       >
-        In a crowd of <br />
-        <span class="font-serif font-semibold italic text-accent-ink">67 million</span>,<br />
-        how many look<br />
+        In a crowd of <br class="hidden lg:inline" />
+        <span class="font-serif font-semibold italic text-accent-ink">67 million</span>,{" "}<br class="hidden lg:inline" />
+        how many look{" "}<br class="hidden lg:inline" />
         just like you?
       </h1>
 

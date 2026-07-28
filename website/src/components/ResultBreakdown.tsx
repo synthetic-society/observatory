@@ -224,13 +224,12 @@ export default function ResultBreakdown() {
         </div>
 
         <ul class="divide-y divide-ink/10 border-ink/10 border-y">
-          {/* Narrow screens stack each attribute over three grid rows; md places everything on one. */}
           {rows.map((row) => {
             const barWidth = row.contribution != null ? (row.contribution / maxContribution) * 100 : 0;
             return (
               <li
                 key={row.questionId}
-                class={`grid grid-cols-[24px_minmax(0,1fr)_auto] items-center gap-x-4 gap-y-0.5 py-3 md:grid-cols-[24px_140px_200px_1fr_140px_200px] md:gap-y-0 md:py-2.5 ${
+                class={`grid grid-cols-[24px_minmax(0,1fr)_auto] items-center gap-x-4 gap-y-0.5 py-3 lg:grid-cols-[24px_140px_200px_1fr_140px_200px] lg:gap-y-0 lg:py-2.5 ${
                   row.on ? "text-ink" : "text-ink/70"
                 }`}
               >
@@ -239,19 +238,19 @@ export default function ResultBreakdown() {
                   type="checkbox"
                   checked={row.on}
                   onChange={() => toggle(row.questionId)}
-                  class="col-start-1 row-start-1 h-4 w-4 accent-ink md:col-start-auto md:row-start-auto"
+                  class="col-start-1 row-start-1 h-6 w-6 cursor-pointer accent-ink lg:col-start-auto lg:row-start-auto"
                 />
                 <label
                   for={`include-${row.questionId}`}
-                  class="col-start-2 row-start-1 font-semibold md:col-start-auto md:row-start-auto"
+                  class="col-start-2 row-start-1 -my-2 cursor-pointer py-2 font-semibold lg:col-start-auto lg:row-start-auto"
                 >
                   {row.label}
                 </label>
-                <span class="col-start-2 row-start-2 truncate text-ink/70 text-sm md:col-start-auto md:row-start-auto md:text-base">
+                <span class="col-start-2 row-start-2 truncate text-ink/70 text-sm lg:col-start-auto lg:row-start-auto lg:text-base">
                   {row.value}
                 </span>
                 <div
-                  class="col-span-2 col-start-2 row-start-3 mt-1 flex items-center gap-3 md:col-span-1 md:col-start-auto md:row-start-auto md:mt-0"
+                  class="col-span-2 col-start-2 row-start-3 mt-1 flex items-center gap-3 lg:col-span-1 lg:col-start-auto lg:row-start-auto lg:mt-0"
                   role="img"
                   aria-label={
                     row.contribution == null
@@ -266,10 +265,10 @@ export default function ResultBreakdown() {
                     />
                   </div>
                 </div>
-                <span class="col-start-3 row-start-1 text-right text-ink/70 tabular-nums md:col-start-auto md:row-start-auto">
+                <span class="col-start-3 row-start-1 text-right text-ink/70 tabular-nums lg:col-start-auto lg:row-start-auto">
                   {row.on && `${row.remaining < 10 ? "±" : ""}${fmt(row.remaining)} left`}
                 </span>
-                <span class="col-start-3 row-start-2 text-right text-sm tabular-nums md:col-start-auto md:row-start-auto md:text-base">
+                <span class="col-start-3 row-start-2 text-right text-sm tabular-nums lg:col-start-auto lg:row-start-auto lg:text-base">
                   {row.on && `1 in ${fmt(row.oneIn)}`}
                 </span>
               </li>

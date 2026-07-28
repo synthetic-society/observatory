@@ -22,7 +22,7 @@ const VARIANTS: Record<Variant, string> = {
 };
 
 export const buttonClasses = ({ variant = "primary", size = "md" }: StyleProps = {}, extra = "") =>
-  `inline-flex items-center justify-center gap-2 transition focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2 disabled:opacity-40 ${SIZES[size]} ${VARIANTS[variant]} ${extra}`;
+  `inline-flex min-h-11 items-center justify-center gap-2 transition focus-visible:outline-2 focus-visible:outline-ink focus-visible:outline-offset-2 disabled:opacity-40 ${SIZES[size]} ${VARIANTS[variant]} ${extra}`;
 
 export default function Button({ variant, size, class: extra, ...props }: Props) {
   return <button class={buttonClasses({ variant, size }, extra)} {...props} />;
