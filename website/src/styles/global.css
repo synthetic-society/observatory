@@ -12,6 +12,12 @@
   @apply underline;
 }
 
+/* The quiz and result focus these headings so screen readers announce them; hide the ring the browser would draw. */
+h1[tabindex="-1"],
+h1[tabindex="-1"]:focus-visible {
+  outline: none;
+}
+
 @font-face {
   font-family: "MD System";
   font-style: normal;

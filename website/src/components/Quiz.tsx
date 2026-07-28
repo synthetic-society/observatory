@@ -157,7 +157,7 @@ export default function Quiz() {
             {step.kind === "dob" ? <DobInputs blocked={blocked} /> : <SingleSelect stepId={step.id} />}
 
             {blocked && !canContinue && step.kind !== "dob" && (
-              <p role="alert" class="mt-3 text-ink text-sm">
+              <p role="alert" class="mt-3 font-semibold text-ink text-sm">
                 Choose an answer to continue.
               </p>
             )}
@@ -272,7 +272,7 @@ function SingleSelect({ stepId }: { stepId: string }) {
   if (!question) return null;
   const selected = answers.value[question.id];
   return (
-    <fieldset class="mt-6 grid gap-2 sm:grid-cols-2">
+    <fieldset class="mt-6 grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-2">
       <legend class="sr-only">{question.title}</legend>
       {question.options.map((option) => (
         <label
@@ -334,7 +334,7 @@ function DobInputs({ blocked }: { blocked: boolean }) {
         ))}
       </div>
       {invalid && (
-        <p id="dob-error" role="alert" class="mt-3 text-ink text-sm">
+        <p id="dob-error" role="alert" class="mt-3 font-semibold text-ink text-sm">
           Enter a real date of birth: a day, a month, and a year between 1900 and today.
         </p>
       )}

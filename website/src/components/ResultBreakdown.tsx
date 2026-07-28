@@ -25,8 +25,6 @@ export default function ResultBreakdown() {
   const [phase, setPhase] = useState<"loading" | "ready" | "error">("loading");
   const [baseline, setBaseline] = useState(0);
   const [current, setCurrent] = useState(0);
-  // Uniqueness with one attribute left out, keyed by question id.
-  const [uniquenessWithout, setUniquenessWithout] = useState<Record<string, number>>({});
   const [enabled, setEnabled] = useState<Record<string, boolean>>({});
   const [recomputing, setRecomputing] = useState(false);
   const [toggleFailed, setToggleFailed] = useState(false);
@@ -63,16 +61,6 @@ export default function ResultBreakdown() {
       setBaseline(base);
       setCurrent(base);
       setPhase("ready");
-
-      const without: Record<string, number> = {};
-      for (const id of questionIds) {
-        without[id] = await computeFor(worker, loaded, storedAnswers, {
-          ...allEnabled,
-          [id]: false,
-        });
-        if (cancelled) return;
-      }
-      setUniquenessWithout(without);
     };
 
     run().catch(() => {
@@ -161,22 +149,22 @@ export default function ResultBreakdown() {
   const rows = quiz.questions.map((question) => {
     const { label: value } = answerDisplay(quiz, question, answers);
     const on = enabled[question.id] ?? true;
-    if (on) shareSoFar *= computeShare(quiz, question, answers);
+    const share = computeShare(quiz, question, answers);
+    if (on) shareSoFar *= share;
     const remaining = Math.max(1, Math.round(quiz.population * shareSoFar));
     const oneIn = shareSoFar > 0 ? Math.max(1, Math.round(1 / shareSoFar)) : quiz.population;
-    const without = uniquenessWithout[question.id];
-    const contribution = without == null ? null : Math.max(0, (baseline - without) * 100);
     return {
       questionId: question.id,
       label: quiz.resultLabels[question.id] ?? question.attr,
       value,
       remaining,
       oneIn,
-      contribution,
+      // How much this one answer narrows the crowd, on a log scale so rare and common answers stay comparable.
+      selectivity: share > 0 && share < 1 ? Math.log(1 / share) : 0,
       on,
     };
   });
-  const maxContribution = Math.max(1e-9, ...rows.map((row) => row.contribution ?? 0));
+  const maxSelectivity = Math.max(1e-9, ...rows.map((row) => row.selectivity));
 
   const popLabel =
     quiz.population >= 1e6
@@ -216,7 +204,7 @@ export default function ResultBreakdown() {
               )}
             </p>
             {toggleFailed && (
-              <p role="alert" class="mt-1 text-ink text-sm">
+              <p role="alert" class="mt-1 font-semibold text-ink text-sm">
                 That change didn’t go through. Try toggling it again.
               </p>
             )}
@@ -225,7 +213,7 @@ export default function ResultBreakdown() {
 
         <ul class="divide-y divide-ink/10 border-ink/10 border-y">
           {rows.map((row) => {
-            const barWidth = row.contribution != null ? (row.contribution / maxContribution) * 100 : 0;
+            const barWidth = (row.selectivity / maxSelectivity) * 100;
             return (
               <li
                 key={row.questionId}
@@ -251,12 +239,7 @@ export default function ResultBreakdown() {
                 </span>
                 <div
                   class="col-span-2 col-start-2 row-start-3 mt-1 flex items-center gap-3 lg:col-span-1 lg:col-start-auto lg:row-start-auto lg:mt-0"
-                  role="img"
-                  aria-label={
-                    row.contribution == null
-                      ? "Contribution still being calculated"
-                      : `Adds ${row.contribution.toFixed(1)} percentage points`
-                  }
+                  aria-hidden="true"
                 >
                   <div class="h-2 flex-1 overflow-hidden rounded-full bg-ink/10">
                     <div

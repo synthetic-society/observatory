@@ -27,8 +27,8 @@ const nav = [
     <link rel="preload" href="/fonts/JunicodeVF-Roman.woff2" as="font" type="font/woff2" crossorigin />
     <title>{title}</title>
   </head>
-  <body class="bg-bg font-sans text-ink antialiased">
-    <header class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+  <body class="flex min-h-dvh flex-col bg-bg font-sans text-ink antialiased">
+    <header class="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5">
       <a href="/" aria-current={path === "/" ? "page" : undefined} class="-my-2.5 flex items-center gap-2.5 py-2.5">
         <span
           id="eye"
@@ -146,7 +146,7 @@ const nav = [
         The anonymity quiz needs JavaScript. Nothing is sent to a server, the whole computation runs in your browser.
       </p>
     </noscript>
-    <main><slot /></main>
+    <main class="flex-1"><slot /></main>
     <footer class="mt-12 border-t border-ink/15 lg:mt-24">
       <div class="mx-auto grid max-w-7xl gap-12 px-6 py-12 md:grid-cols-[1.4fr_1fr]">
         <div>
