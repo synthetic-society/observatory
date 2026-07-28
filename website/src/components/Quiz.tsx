@@ -211,8 +211,8 @@ function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
           Which country are you in?
         </h1>
         <p class="mt-4 max-w-md text-ink/75 text-sm">
-          We compare you against that country’s census. Pick where you live, and we’ll ask a handful of everyday details
-          about you.
+          Pick where you live, and we’ll ask a handful of everyday details to compare you against everyone in your
+          country.
         </p>
       </section>
 
@@ -255,7 +255,7 @@ function CountryStep({ headingRef }: { headingRef: Ref<HTMLHeadingElement> }) {
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </div>
-        <p class="mt-2 text-ink/70 text-xs">
+        <p class="mt-2 text-ink/70 text-sm">
           {countries.length} {countries.length === 1 ? "country" : "countries"} available.
         </p>
 

@@ -97,7 +97,7 @@ export default function ResultBreakdown() {
   if (phase !== "ready") {
     return (
       <div class="mx-auto max-w-5xl px-6 py-20 text-center" role={phase === "error" ? "alert" : "status"}>
-        <h1 class="font-serif text-3xl text-ink">
+        <h1 class="text-3xl text-ink/50">
           {phase === "error" ? "We couldn’t calculate your result." : "Computing your identifiability…"}
         </h1>
         <p class="mt-3 text-ink/70 text-sm">
